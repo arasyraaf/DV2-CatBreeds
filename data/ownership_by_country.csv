@@ -1,0 +1,12 @@
+country,iso3,cat_pct,measure,source,year,url,notes
+Australia,AUS,33.6,households with a cat,Animal Medicines Australia - Pets in Australia 2025,2025,https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf,AMA table shows 33.6%; text rounds to 34%
+New Zealand,NZL,40,households with a cat,Companion Animals NZ / Insights HQ - NZ Pet Data Report,2024,https://companionanimals.nz,"Exact: 40% of households, 1.6 cats per cat household, 1.261m cats (CANZ 2024, s2.1)"
+Indonesia,IDN,47,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Online survey Jan 2021; not strictly households
+Philippines,PHL,43,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Online survey Jan 2021
+Thailand,THA,42,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Online survey Jan 2021
+Vietnam,VNM,35,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Online survey Jan 2021
+Malaysia,MYS,34,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Rakuten original table; survey Jan 2021
+Singapore,SGP,10,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Verified against Rakuten original table (screenshot)
+China,CHN,22,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Optional if map widened to Asia-Pacific
+Japan,JPN,11,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Optional if map widened
+South Korea,KOR,9,respondents owning a cat,Rakuten Insight - Pet ownership in Asia,2021,https://insight.rakuten.com/pet-ownership-in-asia/,Optional if map widened
