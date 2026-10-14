@@ -1,0 +1,380 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Share of people/households owning a cat across Oceania and Southeast Asia",
+  "width": "container",
+  "height": 540,
+  "projection": {
+    "type": "equalEarth",
+    "rotate": [
+      -135,
+      0,
+      0
+    ]
+  },
+  "layer": [
+    {
+      "description": "Base layer: every country in the region, light = no data",
+      "data": {
+        "url": "data/region_50m.topo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F6F3EE",
+        "stroke": "#D9D2C8",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "title": "Country"
+          },
+          {
+            "field": "note",
+            "title": "Cat ownership"
+          }
+        ]
+      },
+      "transform": [
+        {
+          "calculate": "'No comparable data'",
+          "as": "note"
+        }
+      ]
+    },
+    {
+      "description": "Choropleth layer: countries with data",
+      "data": {
+        "url": "data/region_50m.topo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.iso3",
+          "from": {
+            "data": {
+              "url": "data/ownership_by_country.csv"
+            },
+            "key": "iso3",
+            "fields": [
+              "country",
+              "cat_pct",
+              "measure",
+              "source",
+              "year"
+            ]
+          }
+        },
+        {
+          "filter": "isValid(datum.cat_pct)"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "color": {
+          "field": "cat_pct",
+          "type": "quantitative",
+          "title": "% owning a cat",
+          "scale": {
+            "range": [
+              "#E3DCD0",
+              "#BFB5A8",
+              "#8C8176",
+              "#4E463F",
+              "#2B2622"
+            ],
+            "domain": [
+              0,
+              50
+            ]
+          },
+          "legend": {
+            "orient": "bottom-left",
+            "direction": "horizontal",
+            "gradientLength": 160,
+            "format": ".0f",
+            "title": "% owning a cat"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "cat_pct",
+            "title": "Own a cat (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "measure",
+            "title": "Measured as"
+          },
+          {
+            "field": "source",
+            "title": "Source"
+          },
+          {
+            "field": "year",
+            "title": "Year"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/region_50m.topo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.iso3 === 'AUS' || datum.properties.iso3 === 'MYS'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "stroke": {
+          "field": "properties.iso3",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "AUS",
+              "MYS"
+            ],
+            "range": [
+              "#0072B2",
+              "#E69F00"
+            ]
+          },
+          "legend": null
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "label": "Thailand 42%",
+            "lon": 90.5,
+            "lat": 17.5,
+            "alon": 100.8,
+            "alat": 15.5,
+            "hl": "o"
+          },
+          {
+            "label": "Vietnam 35%",
+            "lon": 116.5,
+            "lat": 17.5,
+            "alon": 108.2,
+            "alat": 14.5,
+            "hl": "o"
+          },
+          {
+            "label": "Philippines 43%",
+            "lon": 131.5,
+            "lat": 13.5,
+            "alon": 122.5,
+            "alat": 12.5,
+            "hl": "o"
+          },
+          {
+            "label": "Malaysia 34%",
+            "lon": 126.5,
+            "lat": 5.2,
+            "alon": 116.5,
+            "alat": 4.6,
+            "hl": "MY"
+          },
+          {
+            "label": "Singapore 10%",
+            "lon": 86.5,
+            "lat": -1.5,
+            "alon": 103.8,
+            "alat": 1.3,
+            "hl": "o"
+          },
+          {
+            "label": "New Zealand 40%*",
+            "lon": 158.5,
+            "lat": -44.5,
+            "alon": 171.5,
+            "alat": -42,
+            "hl": "o"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "stroke": "#2B2622",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "alon"
+        },
+        "latitude2": {
+          "field": "alat"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "label": "Indonesia 47%",
+            "lon": 112,
+            "lat": -8.2,
+            "alon": null,
+            "alat": null,
+            "hl": "o"
+          },
+          {
+            "label": "Thailand 42%",
+            "lon": 90.5,
+            "lat": 17.5,
+            "alon": 100.8,
+            "alat": 15.5,
+            "hl": "o"
+          },
+          {
+            "label": "Vietnam 35%",
+            "lon": 116.5,
+            "lat": 17.5,
+            "alon": 108.2,
+            "alat": 14.5,
+            "hl": "o"
+          },
+          {
+            "label": "Philippines 43%",
+            "lon": 131.5,
+            "lat": 13.5,
+            "alon": 122.5,
+            "alat": 12.5,
+            "hl": "o"
+          },
+          {
+            "label": "Malaysia 34%",
+            "lon": 126.5,
+            "lat": 5.2,
+            "alon": 116.5,
+            "alat": 4.6,
+            "hl": "MY"
+          },
+          {
+            "label": "Singapore 10%",
+            "lon": 86.5,
+            "lat": -1.5,
+            "alon": 103.8,
+            "alat": 1.3,
+            "hl": "o"
+          },
+          {
+            "label": "Australia 34%*",
+            "lon": 134,
+            "lat": -25,
+            "alon": null,
+            "alat": null,
+            "hl": "AU"
+          },
+          {
+            "label": "New Zealand 40%*",
+            "lon": 158.5,
+            "lat": -44.5,
+            "alon": 171.5,
+            "alat": -42,
+            "hl": "o"
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 4,
+            "strokeJoin": "round",
+            "opacity": 0.9
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "fontWeight": 700
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            },
+            "color": {
+              "field": "hl",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "AU",
+                  "MY",
+                  "o"
+                ],
+                "range": [
+                  "#0072B2",
+                  "#A35F00",
+                  "#2B2622"
+                ]
+              },
+              "legend": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
