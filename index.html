@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedigree vs Moggy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.33.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.23.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.29.0"></script>
+  <script src="js/theme.js"></script>
+</head>
+<body>
+<main class="page">
+
+  <header class="section split" style="margin-top: var(--s5);">
+    <div class="text">
+      <h1>Pedigree vs Moggy</h1>
+      <p class="lede">Show-ring breeds fill our feeds. The cats on our sofas are mostly strays, rescues and gifts. A look at the cats we admire and the cats we actually live with, in <span class="au">Australia</span> and <span class="my">Malaysia</span>.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="num">47%</span><span class="label">of Indonesian survey respondents own a cat, the highest in the region</span></div>
+      <div class="stat"><span class="num">1 in 3</span><span class="label">Australian households has a cat</span></div>
+      <div class="stat"><span class="num">61%</span><span class="label">of pets in a Putrajaya survey were strays taken in from nearby</span></div>
+      <div class="stat"><span class="num">30 of 67</span><span class="label">pedigree breeds in our data were developed in the United States</span></div>
+    </div>
+  </header>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Southeast Asia is cat country</h2>
+      <p>About <strong>four in ten</strong> people in Indonesia, the Philippines and Thailand own a cat.</p>
+      <p><span class="my">Malaysia</span> sits mid-table at 34%, level with <span class="au">Australia</span>.</p>
+      <p>City-state Singapore is the outlier: only one person in ten owns a cat.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Share owning at least one cat</div>
+      <p class="chart-note">Darker means more owners. *Australia and New Zealand count households; other countries count survey respondents.</p>
+      <div id="v-ownership-map" class="vis"></div>
+      <p class="source">Sources: Animal Medicines Australia 2025; Companion Animals NZ 2024; Rakuten Insight, January 2021. Grey: no comparable data. Map: Natural Earth.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Most cats are found, not bought</h2>
+      <p>Only <strong>one in four</strong> <span class="au">Australian</span> cats was bought from a breeder or pet shop. In New Zealand it is about <strong>one in eight</strong>.</p>
+      <p>In <span class="my">Putrajaya</span>, <strong>six in ten</strong> pets were strays taken in from the neighbourhood, and only 15% were bought.</p>
+      <p>The pedigree breeds we admire are the exception, not the rule.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">How 100 cats came home</div>
+      <p class="chart-note">Each square is 1%. Darker squares are cats that were found, rescued or given.</p>
+      <div id="v-acquisition-waffle" class="vis"></div>
+      <p class="source">Sources: Animal Medicines Australia 2025 (cats; sums to 99%, one square added to "Other"); Companion Animals NZ 2024 (cats, n=1,289); Azjeemah Bee et al. 2019 (Putrajaya, all pets, n=594, no shelter category, so indicative only).</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Most pedigree breeds were made in America</h2>
+      <p><strong>30 of the 67</strong> breeds were developed in the United States and 8 in the United Kingdom.</p>
+      <p>Southeast Asia gave the world six: Siamese, Korat, Khao Manee, Burmese, European Burmese and the Singapura.</p>
+      <p>None of the breeds in this set was developed in Malaysia.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Breeds by country of origin</div>
+      <p class="chart-note">Circle area shows the number of breeds. Hover for the list.</p>
+      <div id="v-origin-map" class="vis"></div>
+      <p class="source">Source: TheCatAPI breed data, origin as recorded there (some origins are disputed). Map: Natural Earth.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Most breeds weigh about five kilos</h2>
+      <p>Short-coated and long-coated breeds both have a typical weight of <strong>about 5 kg</strong>.</p>
+      <p>Rex and hairless breeds are the lightweights, at about <strong>3.6 kg</strong>. The heaviest, the Maine Coon and the Chausie, reach about 9 kg.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Typical weight by coat type</div>
+      <p class="chart-note">The box covers the middle half of the breeds in each group. The dark line is the typical breed. Each dot is one breed.</p>
+      <div id="v-weight-box" class="vis"></div>
+      <p class="source">Source: TheCatAPI breed data. Typical weight is the middle of each breed's weight range.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Long coats come with a gentler reputation</h2>
+      <p>Long-coated breeds are described as <strong>gentle</strong>, <strong>calm</strong> or <strong>quiet</strong> far more often than short-coated ones.</p>
+      <p>Every rex and hairless breed is listed as affectionate. Few breeds in any group are called independent.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Share of breeds whose temperament description uses each word (%)</div>
+      <div id="v-temperament" class="vis"></div>
+      <p class="source">Source: TheCatAPI temperament descriptions, 67 breeds grouped by coat (number of breeds in brackets). The two hybrid breeds have short coats and count as short. Descriptions are written by breed enthusiasts, not measured.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Every breed is "loving". The differences are in the work.</h2>
+      <p><strong>60 of 67</strong> breeds score the maximum 5 for affection, so the ratings cannot tell breeds apart on it. It is left out here.</p>
+      <p>The real differences are in <strong>grooming</strong>, <strong>shedding</strong>, <strong>noise</strong> and <strong>energy</strong>.</p>
+      <p>Use the menu to sort the breeds by any trait.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Trait scores for 67 breeds (1 = low, 5 = high)</div>
+      <div id="v-trait-scores" class="vis"></div>
+      <p class="source">Source: TheCatAPI trait scores, from a saved earlier version of the dataset. Scores are ratings compiled from breed guides, not measurements.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Fluffy or energetic: pick one</h2>
+      <p>The Persian scores <strong>5 for grooming</strong> but only 1 for energy.</p>
+      <p>The Abyssinian is the opposite: <strong>5 for energy</strong> and company, and only 1 for grooming.</p>
+      <p>Pick any two breeds to compare.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Compare two breeds</div>
+      <p class="chart-note">The grey shape is the average breed. Further from the centre means a higher score.</p>
+      <div id="v-radar" class="vis"></div>
+      <p class="source">Source: TheCatAPI trait scores, as above.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Long coats mean twice the grooming</h2>
+      <p>Long-coated breeds average <strong>3.0 out of 5</strong> for grooming. Short-coated breeds average <strong>1.5</strong>.</p>
+      <p>Rex and hairless breeds shed the least, averaging 1.3 for shedding.</p>
+      <p>Click a coat type in the legend to pick it out.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Every breed, every trait</div>
+      <p class="chart-note">One line per breed. Hover over a line to see the breed.</p>
+      <div id="v-parallel" class="vis"></div>
+      <p class="source">Source: TheCatAPI trait scores. Lines are nudged slightly apart so breeds with equal scores stay visible.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>Australia likes Ragdolls, Malaysia likes British Shorthairs</h2>
+      <p>In the year to October 2026, Ragdoll made up <strong>36%</strong> of searches for the five breeds in <span class="au">Australia</span>, but <strong>23%</strong> in <span class="my">Malaysia</span>.</p>
+      <p>British Shorthair is the reverse: <strong>30%</strong> in <span class="my">Malaysia</span>, <strong>16%</strong> in <span class="au">Australia</span>.</p>
+      <p>Search interest shows what people want to look at, not what they own.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Share of search interest among five breeds</div>
+      <p class="chart-note">Shares within each country add to 100%. Compare shares, not search volumes.</p>
+      <div id="v-popularity" class="vis"></div>
+      <p class="source">Source: Google Trends, web search, weekly data to 11 October 2026, five breeds searched together in each country. Google scales each country to its own peak.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>In Malaysia, Ragdoll has overtaken Persian</h2>
+      <p>Five years ago Persian ranked third of the five breeds in <span class="my">Malaysia</span> and Ragdoll fourth.</p>
+      <p><strong>Ragdoll passed Persian in the year to October 2024</strong> and has kept climbing.</p>
+      <p><span class="au">Australia</span> has not changed: the order of the five breeds is the same in all five years.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Rank of five breeds by search share</div>
+      <p class="chart-note">Rank 1 is the most searched of the five breeds. Ragdoll and Persian are highlighted.</p>
+      <div id="v-rank" class="vis"></div>
+      <p class="source">Source: Google Trends, as above, averaged over each 12 months to October.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>Created by</strong> Asyraaf Rahman · FIT3179 Data Visualisation, Monash University · October 2026</p>
+    <p><strong>Data sources</strong><br>
+      Animal Medicines Australia, <em>Pets in Australia 2025</em> · Companion Animals New Zealand, <em>NZ Pet Data Report 2024</em> · Rakuten Insight, <em>Pet ownership in Asia</em>, January 2021 · Azjeemah Bee S.H. et al., pet ownership in Putrajaya, 2019 · TheCatAPI breed data (api.thecatapi.com) · Google Trends (trends.google.com), Australia and Malaysia, to 11 October 2026 · Natural Earth country boundaries via world-atlas.</p>
+    <p><strong>Generative AI</strong><br>
+      DRAFT, EDIT TO MATCH WHAT YOU DID: Claude (Anthropic) was used to plan the story, clean and prepare the data, write the Vega-Lite specifications, CSS and page text, and to check the design against feedback. The author chose the topic and data, reviewed every chart and checked the figures against their sources.</p>
+  </footer>
+
+</main>
+<script>
+  embedChart("#v-ownership-map", "specs/01_ownership_map.vl.json");
+  embedChart("#v-acquisition-waffle", "specs/02_acquisition_waffle.vl.json");
+  embedChart("#v-origin-map", "specs/07_origin_map.vl.json");
+  embedChart("#v-weight-box", "specs/08_weight_boxplot.vl.json");
+  embedChart("#v-temperament", "specs/03_temperament_heatmap.vl.json");
+  embedChart("#v-trait-scores", "specs/04_trait_heatmap.vl.json");
+  embedChart("#v-radar", "specs/05_radar.vg.json");
+  embedChart("#v-parallel", "specs/06_parallel_coords.vl.json");
+  embedChart("#v-popularity", "specs/09_slope.vl.json");
+  embedChart("#v-rank", "specs/10_bump.vl.json");
+</script>
+</body>
+</html>
