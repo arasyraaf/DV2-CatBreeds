@@ -1,0 +1,190 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Parallel coordinates: one line per breed across 8 trait scores, coloured by coat group",
+  "data": {
+    "url": "data/traits_long.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "score": "number",
+        "trait_order": "number"
+      }
+    }
+  },
+  "width": "container",
+  "height": 340,
+  "transform": [
+    {
+      "description": "Scores are whole numbers, so nudge each breed slightly up or down to stop lines hiding behind each other",
+      "window": [
+        {
+          "op": "rank",
+          "as": "breedRank"
+        }
+      ],
+      "groupby": [
+        "trait"
+      ],
+      "sort": [
+        {
+          "field": "name"
+        }
+      ]
+    },
+    {
+      "calculate": "datum.score + ((datum.breedRank % 9) - 4) * 0.05",
+      "as": "y"
+    }
+  ],
+  "params": [
+    {
+      "name": "coatPick",
+      "select": {
+        "type": "point",
+        "fields": [
+          "coat"
+        ]
+      },
+      "bind": "legend"
+    },
+    {
+      "name": "hover",
+      "select": {
+        "type": "point",
+        "fields": [
+          "name"
+        ],
+        "on": "pointerover",
+        "clear": "pointerout"
+      }
+    }
+  ],
+  "mark": {
+    "type": "line",
+    "strokeWidth": 1.6,
+    "interpolate": "linear"
+  },
+  "encoding": {
+    "x": {
+      "field": "trait",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "trait_order"
+      },
+      "scale": {
+        "padding": 0.2
+      },
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "labelFontWeight": 700,
+        "labelFontSize": 11,
+        "domain": false,
+        "ticks": false,
+        "grid": true,
+        "gridColor": "#BDB6AC",
+        "labelLimit": 0,
+        "labelExpr": "split(replace(datum.label, '-', '- '), ' ')",
+        "labelLineHeight": 14,
+        "labelBaseline": "bottom",
+        "labelPadding": 18
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "title": "Score (1 = low, 5 = high)",
+      "scale": {
+        "domain": [
+          0.6,
+          5.4
+        ],
+        "nice": false
+      },
+      "axis": {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "grid": false,
+        "domain": false
+      }
+    },
+    "detail": {
+      "field": "name"
+    },
+    "color": {
+      "field": "coat",
+      "type": "nominal",
+      "title": "Coat (click to highlight)",
+      "scale": {
+        "domain": [
+          "Short",
+          "Long",
+          "Short or long",
+          "Rex or hairless"
+        ],
+        "range": [
+          "#009E73",
+          "#CC79A7",
+          "#882255",
+          "#7B5EA7"
+        ]
+      },
+      "legend": {
+        "orient": "top",
+        "direction": "horizontal",
+        "symbolType": "stroke",
+        "symbolStrokeWidth": 3
+      }
+    },
+    "opacity": {
+      "condition": [
+        {
+          "param": "hover",
+          "empty": false,
+          "value": 1
+        },
+        {
+          "param": "coatPick",
+          "empty": false,
+          "value": 0.95
+        }
+      ],
+      "value": 0.2
+    },
+    "strokeWidth": {
+      "condition": [
+        {
+          "param": "hover",
+          "empty": false,
+          "value": 3.5
+        },
+        {
+          "param": "coatPick",
+          "empty": false,
+          "value": 2.2
+        }
+      ],
+      "value": 1.4
+    },
+    "tooltip": [
+      {
+        "field": "name",
+        "title": "Breed"
+      },
+      {
+        "field": "coat",
+        "title": "Coat"
+      },
+      {
+        "field": "origin",
+        "title": "Origin"
+      }
+    ]
+  }
+}

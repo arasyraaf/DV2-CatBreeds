@@ -1,0 +1,687 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Radar chart comparing two breeds' trait scores against the average breed",
+  "width": 236,
+  "height": 236,
+  "padding": {
+    "top": 40,
+    "bottom": 40,
+    "left": 128,
+    "right": 128
+  },
+  "autosize": {
+    "type": "none"
+  },
+  "signals": [
+    {
+      "name": "radius",
+      "update": "width / 2"
+    },
+    {
+      "name": "breedA",
+      "value": "Persian",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Abyssinian",
+          "Aegean",
+          "American Bobtail",
+          "American Curl",
+          "American Shorthair",
+          "American Wirehair",
+          "Arabian Mau",
+          "Australian Mist",
+          "Balinese",
+          "Bambino",
+          "Bengal",
+          "Birman",
+          "Bombay",
+          "British Longhair",
+          "British Shorthair",
+          "Burmese",
+          "Burmilla",
+          "California Spangled",
+          "Chantilly-Tiffany",
+          "Chartreux",
+          "Chausie",
+          "Cheetoh",
+          "Colorpoint Shorthair",
+          "Cornish Rex",
+          "Cymric",
+          "Cyprus",
+          "Devon Rex",
+          "Donskoy",
+          "Dragon Li",
+          "Egyptian Mau",
+          "European Burmese",
+          "Exotic Shorthair",
+          "Havana Brown",
+          "Himalayan",
+          "Japanese Bobtail",
+          "Javanese",
+          "Khao Manee",
+          "Korat",
+          "Kurilian",
+          "LaPerm",
+          "Maine Coon",
+          "Malayan",
+          "Manx",
+          "Munchkin",
+          "Nebelung",
+          "Norwegian Forest Cat",
+          "Ocicat",
+          "Oriental",
+          "Persian",
+          "Pixie-bob",
+          "Ragamuffin",
+          "Ragdoll",
+          "Russian Blue",
+          "Savannah",
+          "Scottish Fold",
+          "Selkirk Rex",
+          "Siamese",
+          "Siberian",
+          "Singapura",
+          "Snowshoe",
+          "Somali",
+          "Sphynx",
+          "Tonkinese",
+          "Toyger",
+          "Turkish Angora",
+          "Turkish Van",
+          "York Chocolate"
+        ],
+        "name": "Breed (solid) "
+      }
+    },
+    {
+      "name": "breedB",
+      "value": "Abyssinian",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Abyssinian",
+          "Aegean",
+          "American Bobtail",
+          "American Curl",
+          "American Shorthair",
+          "American Wirehair",
+          "Arabian Mau",
+          "Australian Mist",
+          "Balinese",
+          "Bambino",
+          "Bengal",
+          "Birman",
+          "Bombay",
+          "British Longhair",
+          "British Shorthair",
+          "Burmese",
+          "Burmilla",
+          "California Spangled",
+          "Chantilly-Tiffany",
+          "Chartreux",
+          "Chausie",
+          "Cheetoh",
+          "Colorpoint Shorthair",
+          "Cornish Rex",
+          "Cymric",
+          "Cyprus",
+          "Devon Rex",
+          "Donskoy",
+          "Dragon Li",
+          "Egyptian Mau",
+          "European Burmese",
+          "Exotic Shorthair",
+          "Havana Brown",
+          "Himalayan",
+          "Japanese Bobtail",
+          "Javanese",
+          "Khao Manee",
+          "Korat",
+          "Kurilian",
+          "LaPerm",
+          "Maine Coon",
+          "Malayan",
+          "Manx",
+          "Munchkin",
+          "Nebelung",
+          "Norwegian Forest Cat",
+          "Ocicat",
+          "Oriental",
+          "Persian",
+          "Pixie-bob",
+          "Ragamuffin",
+          "Ragdoll",
+          "Russian Blue",
+          "Savannah",
+          "Scottish Fold",
+          "Selkirk Rex",
+          "Siamese",
+          "Siberian",
+          "Singapura",
+          "Snowshoe",
+          "Somali",
+          "Sphynx",
+          "Tonkinese",
+          "Toyger",
+          "Turkish Angora",
+          "Turkish Van",
+          "York Chocolate"
+        ],
+        "name": "Breed (dashed) "
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "traits",
+      "url": "data/traits_long.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "score": "number",
+          "trait_order": "number"
+        }
+      }
+    },
+    {
+      "name": "axes",
+      "source": "traits",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "trait",
+            "trait_order"
+          ],
+          "fields": [
+            "score"
+          ],
+          "ops": [
+            "mean"
+          ],
+          "as": [
+            "avg"
+          ]
+        },
+        {
+          "type": "collect",
+          "sort": {
+            "field": "trait_order"
+          }
+        }
+      ]
+    },
+    {
+      "name": "avg",
+      "source": "axes"
+    },
+    {
+      "name": "a",
+      "source": "traits",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.name === breedA"
+        },
+        {
+          "type": "collect",
+          "sort": {
+            "field": "trait_order"
+          }
+        }
+      ]
+    },
+    {
+      "name": "b",
+      "source": "traits",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.name === breedB"
+        },
+        {
+          "type": "collect",
+          "sort": {
+            "field": "trait_order"
+          }
+        }
+      ]
+    },
+    {
+      "name": "rings",
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angle",
+      "type": "point",
+      "range": {
+        "signal": "[-PI / 2, 3 * PI / 2]"
+      },
+      "padding": 0.5,
+      "domain": {
+        "data": "axes",
+        "field": "trait",
+        "sort": {
+          "field": "trait_order",
+          "op": "min"
+        }
+      }
+    },
+    {
+      "name": "r",
+      "type": "linear",
+      "range": {
+        "signal": "[0, radius]"
+      },
+      "zero": true,
+      "domain": [
+        0,
+        5
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "group",
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "radius"
+          },
+          "y": {
+            "signal": "radius"
+          }
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', 1) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', 1) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#E4DED5"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', 2) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', 2) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#E4DED5"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', 3) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', 3) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#E4DED5"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', 4) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', 4) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#E4DED5"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', 5) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', 5) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#E4DED5"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "rule",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "value": 0
+              },
+              "y": {
+                "value": 0
+              },
+              "x2": {
+                "signal": "radius * cos(scale('angle', datum.trait))"
+              },
+              "y2": {
+                "signal": "radius * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#E4DED5"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "avg"
+          },
+          "encode": {
+            "update": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', datum.avg) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', datum.avg) * sin(scale('angle', datum.trait))"
+              },
+              "fill": {
+                "value": "#BDB6AC"
+              },
+              "fillOpacity": {
+                "value": 0.35
+              },
+              "stroke": {
+                "value": "#BDB6AC"
+              },
+              "strokeWidth": {
+                "value": 1
+              }
+            },
+            "hover": {
+              "fillOpacity": {
+                "value": 0.5
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "b"
+          },
+          "encode": {
+            "update": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', datum.score) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', datum.score) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#6B635B"
+              },
+              "strokeWidth": {
+                "value": 2.5
+              },
+              "strokeDash": {
+                "value": [
+                  5,
+                  4
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": {
+            "data": "b"
+          },
+          "encode": {
+            "update": {
+              "x": {
+                "signal": "scale('r', datum.score) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', datum.score) * sin(scale('angle', datum.trait))"
+              },
+              "size": {
+                "value": 60
+              },
+              "fill": {
+                "value": "#FFFFFF"
+              },
+              "stroke": {
+                "value": "#6B635B"
+              },
+              "strokeWidth": {
+                "value": 2
+              },
+              "tooltip": {
+                "signal": "{'Breed': datum.name, 'Trait': datum.trait, 'Score (1 to 5)': datum.score}"
+              }
+            }
+          }
+        },
+        {
+          "type": "line",
+          "from": {
+            "data": "a"
+          },
+          "encode": {
+            "update": {
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('r', datum.score) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', datum.score) * sin(scale('angle', datum.trait))"
+              },
+              "stroke": {
+                "value": "#2B2622"
+              },
+              "strokeWidth": {
+                "value": 2.5
+              },
+              "strokeDash": {
+                "value": []
+              }
+            }
+          }
+        },
+        {
+          "type": "symbol",
+          "from": {
+            "data": "a"
+          },
+          "encode": {
+            "update": {
+              "x": {
+                "signal": "scale('r', datum.score) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "scale('r', datum.score) * sin(scale('angle', datum.trait))"
+              },
+              "size": {
+                "value": 60
+              },
+              "fill": {
+                "value": "#2B2622"
+              },
+              "stroke": {
+                "value": "#2B2622"
+              },
+              "strokeWidth": {
+                "value": 2
+              },
+              "tooltip": {
+                "signal": "{'Breed': datum.name, 'Trait': datum.trait, 'Score (1 to 5)': datum.score}"
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {
+            "data": "axes"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "(radius + 14) * cos(scale('angle', datum.trait))"
+              },
+              "y": {
+                "signal": "(radius + 14) * sin(scale('angle', datum.trait))"
+              },
+              "text": {
+                "field": "trait"
+              },
+              "align": {
+                "signal": "abs(cos(scale('angle', datum.trait))) < 0.1 ? 'center' : cos(scale('angle', datum.trait)) > 0 ? 'left' : 'right'"
+              },
+              "baseline": {
+                "signal": "abs(sin(scale('angle', datum.trait))) < 0.1 ? 'middle' : sin(scale('angle', datum.trait)) > 0 ? 'top' : 'bottom'"
+              },
+              "fill": {
+                "value": "#2B2622"
+              },
+              "fontSize": {
+                "value": 12
+              },
+              "fontWeight": {
+                "value": 700
+              },
+              "font": {
+                "value": "Nunito Sans"
+              }
+            }
+          }
+        },
+        {
+          "type": "text",
+          "from": {
+            "data": "rings"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "value": 4
+              },
+              "y": {
+                "signal": "-scale('r', datum.data)"
+              },
+              "text": {
+                "signal": "datum.data % 2 === 1 ? datum.data : ''"
+              },
+              "fill": {
+                "value": "#6B635B"
+              },
+              "fontSize": {
+                "value": 10
+              },
+              "baseline": {
+                "value": "middle"
+              },
+              "font": {
+                "value": "Nunito Sans"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
