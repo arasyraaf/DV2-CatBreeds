@@ -1,0 +1,14 @@
+country,category,pct,original_label,source,year,url,notes
+Australia,Shelter or rescue,28,RSPCA / Animal shelter,AMA Pets in Australia 2025 (p.13 chart),2025,https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf,cats only
+Australia,Found as a stray,12,Found/Stray,AMA Pets in Australia 2025 (p.13 chart),2025,https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf,
+Australia,Friends or family,28,"Friend, Neighbour, Family, Inherited",AMA Pets in Australia 2025 (p.13 chart),2025,https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf,
+Australia,Bought,24,Breeder 13 + Pet shop 11,AMA Pets in Australia 2025 (p.13 chart),2025,https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf,
+Australia,Other or not stated,8,Vet 3 + Other 4 + 1 rounding,AMA Pets in Australia 2025 (p.13 chart),2025,https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf,Chart values sum to 99; 1 point of rounding added here
+New Zealand,Shelter or rescue,37,SPCA 22 + other rescue/shelter 15,CANZ NZ Pet Data Report 2024 (s4.4),2024,https://companionanimals.nz,"cats only; n=1,289 cats"
+New Zealand,Found as a stray,16,Found / stray,CANZ NZ Pet Data Report 2024 (s4.4),2024,https://companionanimals.nz,
+New Zealand,Friends or family,23,Friend 11 + family 8 + neighbour 4,CANZ NZ Pet Data Report 2024 (s4.4),2024,https://companionanimals.nz,
+New Zealand,Bought,13,Breeder 8 + pet shop 5,CANZ NZ Pet Data Report 2024 (s4.4),2024,https://companionanimals.nz,
+New Zealand,Other or not stated,11,Private advertisement 8 + vet 2 + bred it myself 1,CANZ NZ Pet Data Report 2024 (s4.4),2024,https://companionanimals.nz,
+Malaysia,Found as a stray,61,Pets were strays found nearby,"Azjeemah Bee S.H. et al., Putrajaya",2019,https://agris.fao.org/search/ar/records/647480e22d3f560f80b18c7d,n=594; Putrajaya only; all pets (72% cats)
+Malaysia,Friends or family,24,Gifts,"Azjeemah Bee S.H. et al., Putrajaya",2019,https://agris.fao.org/search/ar/records/647480e22d3f560f80b18c7d,
+Malaysia,Bought,15,Purchased,"Azjeemah Bee S.H. et al., Putrajaya",2019,https://agris.fao.org/search/ar/records/647480e22d3f560f80b18c7d,

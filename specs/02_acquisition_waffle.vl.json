@@ -1,0 +1,224 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Where cats came from: 100 squares per country",
+  "data": {
+    "url": "data/waffle_acquisition.csv"
+  },
+  "spacing": 32,
+  "resolve": {
+    "scale": {
+      "color": "shared"
+    }
+  },
+  "hconcat": [
+    {
+      "title": {
+        "text": "Australia",
+        "color": "#0072B2",
+        "fontSize": 18
+      },
+      "transform": [
+        {
+          "filter": "datum.country === 'Australia'"
+        }
+      ],
+      "width": 190,
+      "height": 190,
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Found as a stray",
+              "Shelter or rescue",
+              "Friends or family",
+              "Bought",
+              "Other or not stated"
+            ],
+            "range": [
+              "#2B2622",
+              "#5E5750",
+              "#968D82",
+              "#CFC7BC",
+              "#EEE9E2"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "columns": 3,
+            "symbolType": "square",
+            "symbolSize": 140
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "category",
+            "title": "How the cat was obtained"
+          },
+          {
+            "field": "pct",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "New Zealand",
+        "color": "#2B2622",
+        "fontSize": 18
+      },
+      "transform": [
+        {
+          "filter": "datum.country === 'New Zealand'"
+        }
+      ],
+      "width": 190,
+      "height": 190,
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Found as a stray",
+              "Shelter or rescue",
+              "Friends or family",
+              "Bought",
+              "Other or not stated"
+            ],
+            "range": [
+              "#2B2622",
+              "#5E5750",
+              "#968D82",
+              "#CFC7BC",
+              "#EEE9E2"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "category",
+            "title": "How the cat was obtained"
+          },
+          {
+            "field": "pct",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    },
+    {
+      "title": {
+        "text": "Malaysia",
+        "color": "#A35F00",
+        "fontSize": 18
+      },
+      "transform": [
+        {
+          "filter": "datum.country === 'Malaysia'"
+        }
+      ],
+      "width": 190,
+      "height": 190,
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "ordinal",
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "ordinal",
+          "axis": null
+        },
+        "color": {
+          "field": "category",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Found as a stray",
+              "Shelter or rescue",
+              "Friends or family",
+              "Bought",
+              "Other or not stated"
+            ],
+            "range": [
+              "#2B2622",
+              "#5E5750",
+              "#968D82",
+              "#CFC7BC",
+              "#EEE9E2"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "category",
+            "title": "How the cat was obtained"
+          },
+          {
+            "field": "pct",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    }
+  ]
+}
