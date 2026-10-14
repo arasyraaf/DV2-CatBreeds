@@ -1,0 +1,27 @@
+country_code,country,region,lat,lon,n_breeds,breeds
+US,United States,North America,39,-98,46,American Bobtail; American Curl; American Ringtail; American Shorthair; American Wirehair; Balinese; Bambino; Bengal; Bombay; California Spangled; Chantilly-Tiffany; Cheetoh; Colorpoint Shorthair; Domestic Longhair; Domestic Mediumhair; Domestic Shorthair; Exotic Longhair; Exotic Shorthair; Genetta; Highlander; Himalayan; Javanese; LaPerm; Lykoi; Maine Coon; Minskin; Minuet; Munchkin; Nebelung; Ocicat; Ojos Azules; Oriental Longhair; Oriental Shorthair; Pixie-bob; Polydactyl; Ragamuffin; Ragdoll; Safari; Savannah; Selkirk Rex; Serengeti; Skookum; Snowshoe; Somali; Toyger; York Chocolate
+GB,United Kingdom,Europe,54,-2,11,Asian Semi-longhair; British Longhair; British Shorthair; British Tipped; Burmilla; Burmoir; Cornish Rex; Devon Rex; Havana Brown; Malayan; Scottish Fold
+RU,Russia,Europe,61,100,6,Donskoy; Kurilian Bobtail; Peterbald; Russian Blue; Siberian; Toybob
+TH,Thailand,Southeast Asia,15,101,5,Khao Manee; Korat; Siamese; Suphalak; Thai
+EG,Egypt,Middle East & N. Africa,26,30,4,Abyssinian; Chausie; Chausie; Egyptian Mau
+CA,Canada,North America,56,-106,4,Cymric; Foldex; Sphynx; Tonkinese
+CY,Cyprus,Europe,35,33,2,Aphrodite Giant; Cyprus
+FR,France,Europe,46,2,2,Birman; Chartreux
+MM,Myanmar,Southeast Asia,21,96,2,Burmese; European Burmese
+TR,Turkey,Middle East & N. Africa,39,35,2,Turkish Angora; Turkish Van
+GR,Greece,Europe,39,22,1,Aegean
+AE,United Arab Emirates,Middle East & N. Africa,24,54,1,Arabian Mau
+AU,Australia,Oceania,-25,134,1,Australian Mist
+BR,Brazil,South America,-10,-52,1,Brazilian Shorthair
+CN,China,East Asia,35,103,1,Dragon Li
+SE,Sweden,Europe,62,15,1,European Shorthair
+DE,Germany,Europe,51,10,1,German Rex
+JP,Japan,East Asia,36,138,1,Japanese Bobtail
+IL,Israel,Middle East & N. Africa,31,35,1,Kanaani
+IM,Isle of Man,Europe,54.2,-4.5,1,Manx
+NO,Norway,Europe,61,9,1,Norwegian Forest Cat
+IR,Iran,Middle East & N. Africa,32,53,1,Persian
+ID,Indonesia,Southeast Asia,-2,118,1,Raas
+SG,Singapore,Southeast Asia,1.35,103.8,1,Singapura
+DK,Denmark,Europe,56,10,1,Sokoke
+UA,Ukraine,Europe,49,32,1,Ukrainian Levkoy

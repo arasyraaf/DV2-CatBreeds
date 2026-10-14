@@ -1,0 +1,49 @@
+group,group_label,n,word,count,pct
+Short,Short (32),32,Affectionate,23,72
+Short,Short (32),32,Intelligent,23,72
+Short,Short (32),32,Playful,23,72
+Short,Short (32),32,Social,19,59
+Short,Short (32),32,Active,13,41
+Short,Short (32),32,Gentle,11,34
+Short,Short (32),32,Loyal,14,44
+Short,Short (32),32,Curious,13,41
+Short,Short (32),32,Friendly,6,19
+Short,Short (32),32,Calm,5,16
+Short,Short (32),32,Independent,4,12
+Short,Short (32),32,Quiet,2,6
+Long,Long (19),19,Affectionate,14,74
+Long,Long (19),19,Intelligent,13,68
+Long,Long (19),19,Playful,11,58
+Long,Long (19),19,Social,8,42
+Long,Long (19),19,Active,8,42
+Long,Long (19),19,Gentle,10,53
+Long,Long (19),19,Loyal,9,47
+Long,Long (19),19,Curious,4,21
+Long,Long (19),19,Friendly,4,21
+Long,Long (19),19,Calm,5,26
+Long,Long (19),19,Independent,3,16
+Long,Long (19),19,Quiet,5,26
+Short or long,Short or long (9),9,Affectionate,6,67
+Short or long,Short or long (9),9,Intelligent,7,78
+Short or long,Short or long (9),9,Playful,8,89
+Short or long,Short or long (9),9,Social,6,67
+Short or long,Short or long (9),9,Active,2,22
+Short or long,Short or long (9),9,Gentle,3,33
+Short or long,Short or long (9),9,Loyal,5,56
+Short or long,Short or long (9),9,Curious,2,22
+Short or long,Short or long (9),9,Friendly,0,0
+Short or long,Short or long (9),9,Calm,0,0
+Short or long,Short or long (9),9,Independent,1,11
+Short or long,Short or long (9),9,Quiet,0,0
+Rex or hairless,Rex or hairless (7),7,Affectionate,7,100
+Rex or hairless,Rex or hairless (7),7,Intelligent,4,57
+Rex or hairless,Rex or hairless (7),7,Playful,6,86
+Rex or hairless,Rex or hairless (7),7,Social,6,86
+Rex or hairless,Rex or hairless (7),7,Active,2,29
+Rex or hairless,Rex or hairless (7),7,Gentle,4,57
+Rex or hairless,Rex or hairless (7),7,Loyal,3,43
+Rex or hairless,Rex or hairless (7),7,Curious,1,14
+Rex or hairless,Rex or hairless (7),7,Friendly,3,43
+Rex or hairless,Rex or hairless (7),7,Calm,0,0
+Rex or hairless,Rex or hairless (7),7,Independent,0,0
+Rex or hairless,Rex or hairless (7),7,Quiet,3,43

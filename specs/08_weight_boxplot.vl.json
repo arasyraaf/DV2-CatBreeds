@@ -1,0 +1,161 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Typical weight by coat group, 67 breeds",
+  "data": {
+    "url": "data/weight_by_coat.csv"
+  },
+  "width": "container",
+  "height": 320,
+  "transform": [
+    {
+      "joinaggregate": [
+        {
+          "op": "count",
+          "as": "n"
+        }
+      ],
+      "groupby": [
+        "coat"
+      ]
+    },
+    {
+      "calculate": "datum.coat + ' (' + datum.n + ')'",
+      "as": "group"
+    },
+    {
+      "calculate": "random()",
+      "as": "jit"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "group",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Short (32)",
+        "Long (19)",
+        "Short or long (9)",
+        "Rex or hairless (7)"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "labelLimit": 0
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "boxplot",
+        "extent": "min-max",
+        "size": 64,
+        "median": {
+          "color": "#2B2622",
+          "size": 64,
+          "thickness": 2.5
+        },
+        "rule": {
+          "color": "#6B635B"
+        },
+        "ticks": {
+          "color": "#6B635B",
+          "size": 18
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "weight_mid",
+          "type": "quantitative",
+          "title": "Typical weight (kg)",
+          "scale": {
+            "zero": true,
+            "domain": [
+              0,
+              10
+            ]
+          }
+        },
+        "color": {
+          "field": "coat",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Short",
+              "Long",
+              "Short or long",
+              "Rex or hairless"
+            ],
+            "range": [
+              "#009E73",
+              "#CC79A7",
+              "#882255",
+              "#7B5EA7"
+            ]
+          },
+          "legend": null
+        },
+        "opacity": {
+          "value": 0.55
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 38,
+        "color": "#2B2622",
+        "opacity": 0.6
+      },
+      "encoding": {
+        "y": {
+          "field": "weight_mid",
+          "type": "quantitative"
+        },
+        "xOffset": {
+          "field": "jit",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              {
+                "expr": "width/8-24"
+              },
+              {
+                "expr": "width/8+24"
+              }
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Breed"
+          },
+          {
+            "field": "weight_min",
+            "title": "Min (kg)"
+          },
+          {
+            "field": "weight_max",
+            "title": "Max (kg)"
+          }
+        ],
+        "x": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Short (32)",
+            "Long (19)",
+            "Short or long (9)",
+            "Rex or hairless (7)"
+          ]
+        }
+      }
+    }
+  ]
+}

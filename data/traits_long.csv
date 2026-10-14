@@ -1,0 +1,537 @@
+name,coat,origin,trait,trait_order,score
+Abyssinian,Short,Egypt,Energy,0,5
+Abyssinian,Short,Egypt,Needs company,1,5
+Abyssinian,Short,Egypt,Stranger-friendly,2,5
+Abyssinian,Short,Egypt,Talkative,3,1
+Abyssinian,Short,Egypt,Intelligence,4,5
+Abyssinian,Short,Egypt,Grooming needs,5,1
+Abyssinian,Short,Egypt,Shedding,6,2
+Abyssinian,Short,Egypt,Health issues,7,2
+Aegean,Long,Greece,Energy,0,3
+Aegean,Long,Greece,Needs company,1,4
+Aegean,Long,Greece,Stranger-friendly,2,4
+Aegean,Long,Greece,Talkative,3,3
+Aegean,Long,Greece,Intelligence,4,3
+Aegean,Long,Greece,Grooming needs,5,3
+Aegean,Long,Greece,Shedding,6,3
+Aegean,Long,Greece,Health issues,7,1
+American Bobtail,Short or long,United States,Energy,0,3
+American Bobtail,Short or long,United States,Needs company,1,3
+American Bobtail,Short or long,United States,Stranger-friendly,2,3
+American Bobtail,Short or long,United States,Talkative,3,3
+American Bobtail,Short or long,United States,Intelligence,4,5
+American Bobtail,Short or long,United States,Grooming needs,5,1
+American Bobtail,Short or long,United States,Shedding,6,3
+American Bobtail,Short or long,United States,Health issues,7,1
+American Curl,Short or long,United States,Energy,0,3
+American Curl,Short or long,United States,Needs company,1,3
+American Curl,Short or long,United States,Stranger-friendly,2,3
+American Curl,Short or long,United States,Talkative,3,3
+American Curl,Short or long,United States,Intelligence,4,3
+American Curl,Short or long,United States,Grooming needs,5,2
+American Curl,Short or long,United States,Shedding,6,3
+American Curl,Short or long,United States,Health issues,7,1
+American Shorthair,Short,United States,Energy,0,3
+American Shorthair,Short,United States,Needs company,1,4
+American Shorthair,Short,United States,Stranger-friendly,2,3
+American Shorthair,Short,United States,Talkative,3,3
+American Shorthair,Short,United States,Intelligence,4,3
+American Shorthair,Short,United States,Grooming needs,5,1
+American Shorthair,Short,United States,Shedding,6,3
+American Shorthair,Short,United States,Health issues,7,3
+American Wirehair,Short,United States,Energy,0,3
+American Wirehair,Short,United States,Needs company,1,3
+American Wirehair,Short,United States,Stranger-friendly,2,3
+American Wirehair,Short,United States,Talkative,3,3
+American Wirehair,Short,United States,Intelligence,4,3
+American Wirehair,Short,United States,Grooming needs,5,1
+American Wirehair,Short,United States,Shedding,6,1
+American Wirehair,Short,United States,Health issues,7,3
+Arabian Mau,Short,United Arab Emirates,Energy,0,4
+Arabian Mau,Short,United Arab Emirates,Needs company,1,3
+Arabian Mau,Short,United Arab Emirates,Stranger-friendly,2,3
+Arabian Mau,Short,United Arab Emirates,Talkative,3,1
+Arabian Mau,Short,United Arab Emirates,Intelligence,4,3
+Arabian Mau,Short,United Arab Emirates,Grooming needs,5,1
+Arabian Mau,Short,United Arab Emirates,Shedding,6,1
+Arabian Mau,Short,United Arab Emirates,Health issues,7,1
+Australian Mist,Short,Australia,Energy,0,4
+Australian Mist,Short,Australia,Needs company,1,4
+Australian Mist,Short,Australia,Stranger-friendly,2,4
+Australian Mist,Short,Australia,Talkative,3,3
+Australian Mist,Short,Australia,Intelligence,4,4
+Australian Mist,Short,Australia,Grooming needs,5,3
+Australian Mist,Short,Australia,Shedding,6,3
+Australian Mist,Short,Australia,Health issues,7,1
+Balinese,Long,United States,Energy,0,5
+Balinese,Long,United States,Needs company,1,5
+Balinese,Long,United States,Stranger-friendly,2,5
+Balinese,Long,United States,Talkative,3,5
+Balinese,Long,United States,Intelligence,4,5
+Balinese,Long,United States,Grooming needs,5,3
+Balinese,Long,United States,Shedding,6,3
+Balinese,Long,United States,Health issues,7,3
+Bambino,Rex or hairless,United States,Energy,0,5
+Bambino,Rex or hairless,United States,Needs company,1,3
+Bambino,Rex or hairless,United States,Stranger-friendly,2,3
+Bambino,Rex or hairless,United States,Talkative,3,3
+Bambino,Rex or hairless,United States,Intelligence,4,5
+Bambino,Rex or hairless,United States,Grooming needs,5,1
+Bambino,Rex or hairless,United States,Shedding,6,1
+Bambino,Rex or hairless,United States,Health issues,7,1
+Bengal,Short,United States,Energy,0,5
+Bengal,Short,United States,Needs company,1,5
+Bengal,Short,United States,Stranger-friendly,2,3
+Bengal,Short,United States,Talkative,3,5
+Bengal,Short,United States,Intelligence,4,5
+Bengal,Short,United States,Grooming needs,5,1
+Bengal,Short,United States,Shedding,6,3
+Bengal,Short,United States,Health issues,7,3
+Birman,Long,France,Energy,0,3
+Birman,Long,France,Needs company,1,4
+Birman,Long,France,Stranger-friendly,2,3
+Birman,Long,France,Talkative,3,1
+Birman,Long,France,Intelligence,4,3
+Birman,Long,France,Grooming needs,5,2
+Birman,Long,France,Shedding,6,3
+Birman,Long,France,Health issues,7,1
+Bombay,Short,United States,Energy,0,3
+Bombay,Short,United States,Needs company,1,4
+Bombay,Short,United States,Stranger-friendly,2,4
+Bombay,Short,United States,Talkative,3,5
+Bombay,Short,United States,Intelligence,4,5
+Bombay,Short,United States,Grooming needs,5,1
+Bombay,Short,United States,Shedding,6,3
+Bombay,Short,United States,Health issues,7,3
+British Longhair,Long,United Kingdom,Energy,0,4
+British Longhair,Long,United Kingdom,Needs company,1,3
+British Longhair,Long,United Kingdom,Stranger-friendly,2,4
+British Longhair,Long,United Kingdom,Talkative,3,1
+British Longhair,Long,United Kingdom,Intelligence,4,5
+British Longhair,Long,United Kingdom,Grooming needs,5,5
+British Longhair,Long,United Kingdom,Shedding,6,1
+British Longhair,Long,United Kingdom,Health issues,7,1
+British Shorthair,Short,United Kingdom,Energy,0,2
+British Shorthair,Short,United Kingdom,Needs company,1,3
+British Shorthair,Short,United Kingdom,Stranger-friendly,2,2
+British Shorthair,Short,United Kingdom,Talkative,3,1
+British Shorthair,Short,United Kingdom,Intelligence,4,3
+British Shorthair,Short,United Kingdom,Grooming needs,5,2
+British Shorthair,Short,United Kingdom,Shedding,6,4
+British Shorthair,Short,United Kingdom,Health issues,7,2
+Burmese,Short,Myanmar (Burma),Energy,0,4
+Burmese,Short,Myanmar (Burma),Needs company,1,5
+Burmese,Short,Myanmar (Burma),Stranger-friendly,2,5
+Burmese,Short,Myanmar (Burma),Talkative,3,5
+Burmese,Short,Myanmar (Burma),Intelligence,4,5
+Burmese,Short,Myanmar (Burma),Grooming needs,5,1
+Burmese,Short,Myanmar (Burma),Shedding,6,3
+Burmese,Short,Myanmar (Burma),Health issues,7,3
+Burmilla,Short,United Kingdom,Energy,0,3
+Burmilla,Short,United Kingdom,Needs company,1,4
+Burmilla,Short,United Kingdom,Stranger-friendly,2,3
+Burmilla,Short,United Kingdom,Talkative,3,5
+Burmilla,Short,United Kingdom,Intelligence,4,3
+Burmilla,Short,United Kingdom,Grooming needs,5,3
+Burmilla,Short,United Kingdom,Shedding,6,3
+Burmilla,Short,United Kingdom,Health issues,7,3
+California Spangled,Short,United States,Energy,0,5
+California Spangled,Short,United States,Needs company,1,3
+California Spangled,Short,United States,Stranger-friendly,2,4
+California Spangled,Short,United States,Talkative,3,1
+California Spangled,Short,United States,Intelligence,4,5
+California Spangled,Short,United States,Grooming needs,5,1
+California Spangled,Short,United States,Shedding,6,1
+California Spangled,Short,United States,Health issues,7,1
+Chantilly-Tiffany,Long,United States,Energy,0,4
+Chantilly-Tiffany,Long,United States,Needs company,1,3
+Chantilly-Tiffany,Long,United States,Stranger-friendly,2,4
+Chantilly-Tiffany,Long,United States,Talkative,3,5
+Chantilly-Tiffany,Long,United States,Intelligence,4,5
+Chantilly-Tiffany,Long,United States,Grooming needs,5,5
+Chantilly-Tiffany,Long,United States,Shedding,6,5
+Chantilly-Tiffany,Long,United States,Health issues,7,1
+Chartreux,Short,France,Energy,0,2
+Chartreux,Short,France,Needs company,1,5
+Chartreux,Short,France,Stranger-friendly,2,5
+Chartreux,Short,France,Talkative,3,1
+Chartreux,Short,France,Intelligence,4,4
+Chartreux,Short,France,Grooming needs,5,1
+Chartreux,Short,France,Shedding,6,3
+Chartreux,Short,France,Health issues,7,2
+Chausie,Short,Egypt/United States,Energy,0,4
+Chausie,Short,Egypt/United States,Needs company,1,3
+Chausie,Short,Egypt/United States,Stranger-friendly,2,4
+Chausie,Short,Egypt/United States,Talkative,3,1
+Chausie,Short,Egypt/United States,Intelligence,4,5
+Chausie,Short,Egypt/United States,Grooming needs,5,3
+Chausie,Short,Egypt/United States,Shedding,6,3
+Chausie,Short,Egypt/United States,Health issues,7,1
+Cheetoh,Short,United States,Energy,0,4
+Cheetoh,Short,United States,Needs company,1,3
+Cheetoh,Short,United States,Stranger-friendly,2,4
+Cheetoh,Short,United States,Talkative,3,5
+Cheetoh,Short,United States,Intelligence,4,5
+Cheetoh,Short,United States,Grooming needs,5,1
+Cheetoh,Short,United States,Shedding,6,1
+Cheetoh,Short,United States,Health issues,7,1
+Colorpoint Shorthair,Short,United States,Energy,0,4
+Colorpoint Shorthair,Short,United States,Needs company,1,4
+Colorpoint Shorthair,Short,United States,Stranger-friendly,2,2
+Colorpoint Shorthair,Short,United States,Talkative,3,5
+Colorpoint Shorthair,Short,United States,Intelligence,4,5
+Colorpoint Shorthair,Short,United States,Grooming needs,5,2
+Colorpoint Shorthair,Short,United States,Shedding,6,3
+Colorpoint Shorthair,Short,United States,Health issues,7,2
+Cornish Rex,Rex or hairless,United Kingdom,Energy,0,5
+Cornish Rex,Rex or hairless,United Kingdom,Needs company,1,5
+Cornish Rex,Rex or hairless,United Kingdom,Stranger-friendly,2,3
+Cornish Rex,Rex or hairless,United Kingdom,Talkative,3,1
+Cornish Rex,Rex or hairless,United Kingdom,Intelligence,4,5
+Cornish Rex,Rex or hairless,United Kingdom,Grooming needs,5,1
+Cornish Rex,Rex or hairless,United Kingdom,Shedding,6,1
+Cornish Rex,Rex or hairless,United Kingdom,Health issues,7,2
+Cymric,Long,Isle of Man/Canada,Energy,0,5
+Cymric,Long,Isle of Man/Canada,Needs company,1,5
+Cymric,Long,Isle of Man/Canada,Stranger-friendly,2,3
+Cymric,Long,Isle of Man/Canada,Talkative,3,3
+Cymric,Long,Isle of Man/Canada,Intelligence,4,5
+Cymric,Long,Isle of Man/Canada,Grooming needs,5,3
+Cymric,Long,Isle of Man/Canada,Shedding,6,5
+Cymric,Long,Isle of Man/Canada,Health issues,7,3
+Cyprus,Short or long,Cyprus,Energy,0,4
+Cyprus,Short or long,Cyprus,Needs company,1,3
+Cyprus,Short or long,Cyprus,Stranger-friendly,2,4
+Cyprus,Short or long,Cyprus,Talkative,3,3
+Cyprus,Short or long,Cyprus,Intelligence,4,3
+Cyprus,Short or long,Cyprus,Grooming needs,5,3
+Cyprus,Short or long,Cyprus,Shedding,6,3
+Cyprus,Short or long,Cyprus,Health issues,7,1
+Devon Rex,Rex or hairless,United Kingdom,Energy,0,5
+Devon Rex,Rex or hairless,United Kingdom,Needs company,1,5
+Devon Rex,Rex or hairless,United Kingdom,Stranger-friendly,2,5
+Devon Rex,Rex or hairless,United Kingdom,Talkative,3,1
+Devon Rex,Rex or hairless,United Kingdom,Intelligence,4,5
+Devon Rex,Rex or hairless,United Kingdom,Grooming needs,5,1
+Devon Rex,Rex or hairless,United Kingdom,Shedding,6,1
+Devon Rex,Rex or hairless,United Kingdom,Health issues,7,3
+Donskoy,Rex or hairless,Russia,Energy,0,4
+Donskoy,Rex or hairless,Russia,Needs company,1,5
+Donskoy,Rex or hairless,Russia,Stranger-friendly,2,5
+Donskoy,Rex or hairless,Russia,Talkative,3,2
+Donskoy,Rex or hairless,Russia,Intelligence,4,3
+Donskoy,Rex or hairless,Russia,Grooming needs,5,2
+Donskoy,Rex or hairless,Russia,Shedding,6,1
+Donskoy,Rex or hairless,Russia,Health issues,7,3
+Dragon Li,Short,China,Energy,0,3
+Dragon Li,Short,China,Needs company,1,4
+Dragon Li,Short,China,Stranger-friendly,2,3
+Dragon Li,Short,China,Talkative,3,3
+Dragon Li,Short,China,Intelligence,4,3
+Dragon Li,Short,China,Grooming needs,5,1
+Dragon Li,Short,China,Shedding,6,3
+Dragon Li,Short,China,Health issues,7,1
+Egyptian Mau,Short,Egypt,Energy,0,5
+Egyptian Mau,Short,Egypt,Needs company,1,4
+Egyptian Mau,Short,Egypt,Stranger-friendly,2,2
+Egyptian Mau,Short,Egypt,Talkative,3,3
+Egyptian Mau,Short,Egypt,Intelligence,4,4
+Egyptian Mau,Short,Egypt,Grooming needs,5,1
+Egyptian Mau,Short,Egypt,Shedding,6,3
+Egyptian Mau,Short,Egypt,Health issues,7,3
+European Burmese,Short,Myanmar (Burma),Energy,0,4
+European Burmese,Short,Myanmar (Burma),Needs company,1,5
+European Burmese,Short,Myanmar (Burma),Stranger-friendly,2,5
+European Burmese,Short,Myanmar (Burma),Talkative,3,4
+European Burmese,Short,Myanmar (Burma),Intelligence,4,5
+European Burmese,Short,Myanmar (Burma),Grooming needs,5,1
+European Burmese,Short,Myanmar (Burma),Shedding,6,3
+European Burmese,Short,Myanmar (Burma),Health issues,7,4
+Exotic Shorthair,Short,United States,Energy,0,3
+Exotic Shorthair,Short,United States,Needs company,1,4
+Exotic Shorthair,Short,United States,Stranger-friendly,2,2
+Exotic Shorthair,Short,United States,Talkative,3,1
+Exotic Shorthair,Short,United States,Intelligence,4,3
+Exotic Shorthair,Short,United States,Grooming needs,5,2
+Exotic Shorthair,Short,United States,Shedding,6,2
+Exotic Shorthair,Short,United States,Health issues,7,3
+Havana Brown,Short,United Kingdom,Energy,0,3
+Havana Brown,Short,United Kingdom,Needs company,1,5
+Havana Brown,Short,United Kingdom,Stranger-friendly,2,3
+Havana Brown,Short,United Kingdom,Talkative,3,1
+Havana Brown,Short,United Kingdom,Intelligence,4,5
+Havana Brown,Short,United Kingdom,Grooming needs,5,1
+Havana Brown,Short,United Kingdom,Shedding,6,3
+Havana Brown,Short,United Kingdom,Health issues,7,1
+Himalayan,Long,United States,Energy,0,1
+Himalayan,Long,United States,Needs company,1,4
+Himalayan,Long,United States,Stranger-friendly,2,2
+Himalayan,Long,United States,Talkative,3,1
+Himalayan,Long,United States,Intelligence,4,3
+Himalayan,Long,United States,Grooming needs,5,5
+Himalayan,Long,United States,Shedding,6,4
+Himalayan,Long,United States,Health issues,7,3
+Japanese Bobtail,Short or long,Japan,Energy,0,5
+Japanese Bobtail,Short or long,Japan,Needs company,1,5
+Japanese Bobtail,Short or long,Japan,Stranger-friendly,2,5
+Japanese Bobtail,Short or long,Japan,Talkative,3,5
+Japanese Bobtail,Short or long,Japan,Intelligence,4,5
+Japanese Bobtail,Short or long,Japan,Grooming needs,5,1
+Japanese Bobtail,Short or long,Japan,Shedding,6,3
+Japanese Bobtail,Short or long,Japan,Health issues,7,1
+Javanese,Long,United States,Energy,0,5
+Javanese,Long,United States,Needs company,1,5
+Javanese,Long,United States,Stranger-friendly,2,3
+Javanese,Long,United States,Talkative,3,5
+Javanese,Long,United States,Intelligence,4,5
+Javanese,Long,United States,Grooming needs,5,1
+Javanese,Long,United States,Shedding,6,2
+Javanese,Long,United States,Health issues,7,3
+Khao Manee,Short,Thailand,Energy,0,3
+Khao Manee,Short,Thailand,Needs company,1,3
+Khao Manee,Short,Thailand,Stranger-friendly,2,3
+Khao Manee,Short,Thailand,Talkative,3,5
+Khao Manee,Short,Thailand,Intelligence,4,4
+Khao Manee,Short,Thailand,Grooming needs,5,3
+Khao Manee,Short,Thailand,Shedding,6,3
+Khao Manee,Short,Thailand,Health issues,7,1
+Korat,Short,Thailand,Energy,0,3
+Korat,Short,Thailand,Needs company,1,5
+Korat,Short,Thailand,Stranger-friendly,2,2
+Korat,Short,Thailand,Talkative,3,3
+Korat,Short,Thailand,Intelligence,4,5
+Korat,Short,Thailand,Grooming needs,5,1
+Korat,Short,Thailand,Shedding,6,3
+Korat,Short,Thailand,Health issues,7,1
+Kurilian,Short or long,Russia,Energy,0,5
+Kurilian,Short or long,Russia,Needs company,1,5
+Kurilian,Short or long,Russia,Stranger-friendly,2,5
+Kurilian,Short or long,Russia,Talkative,3,3
+Kurilian,Short or long,Russia,Intelligence,4,5
+Kurilian,Short or long,Russia,Grooming needs,5,1
+Kurilian,Short or long,Russia,Shedding,6,2
+Kurilian,Short or long,Russia,Health issues,7,1
+LaPerm,Rex or hairless,United States,Energy,0,4
+LaPerm,Rex or hairless,United States,Needs company,1,4
+LaPerm,Rex or hairless,United States,Stranger-friendly,2,4
+LaPerm,Rex or hairless,United States,Talkative,3,3
+LaPerm,Rex or hairless,United States,Intelligence,4,5
+LaPerm,Rex or hairless,United States,Grooming needs,5,1
+LaPerm,Rex or hairless,United States,Shedding,6,3
+LaPerm,Rex or hairless,United States,Health issues,7,1
+Maine Coon,Long,United States,Energy,0,3
+Maine Coon,Long,United States,Needs company,1,3
+Maine Coon,Long,United States,Stranger-friendly,2,5
+Maine Coon,Long,United States,Talkative,3,1
+Maine Coon,Long,United States,Intelligence,4,5
+Maine Coon,Long,United States,Grooming needs,5,3
+Maine Coon,Long,United States,Shedding,6,3
+Maine Coon,Long,United States,Health issues,7,3
+Malayan,Short,United Kingdom,Energy,0,5
+Malayan,Short,United Kingdom,Needs company,1,3
+Malayan,Short,United Kingdom,Stranger-friendly,2,3
+Malayan,Short,United Kingdom,Talkative,3,5
+Malayan,Short,United Kingdom,Intelligence,4,3
+Malayan,Short,United Kingdom,Grooming needs,5,1
+Malayan,Short,United Kingdom,Shedding,6,1
+Malayan,Short,United Kingdom,Health issues,7,1
+Manx,Short or long,Isle of Man,Energy,0,5
+Manx,Short or long,Isle of Man,Needs company,1,5
+Manx,Short or long,Isle of Man,Stranger-friendly,2,3
+Manx,Short or long,Isle of Man,Talkative,3,3
+Manx,Short or long,Isle of Man,Intelligence,4,5
+Manx,Short or long,Isle of Man,Grooming needs,5,1
+Manx,Short or long,Isle of Man,Shedding,6,5
+Manx,Short or long,Isle of Man,Health issues,7,3
+Munchkin,Short or long,United States,Energy,0,4
+Munchkin,Short or long,United States,Needs company,1,5
+Munchkin,Short or long,United States,Stranger-friendly,2,5
+Munchkin,Short or long,United States,Talkative,3,3
+Munchkin,Short or long,United States,Intelligence,4,5
+Munchkin,Short or long,United States,Grooming needs,5,2
+Munchkin,Short or long,United States,Shedding,6,3
+Munchkin,Short or long,United States,Health issues,7,3
+Nebelung,Long,United States,Energy,0,3
+Nebelung,Long,United States,Needs company,1,3
+Nebelung,Long,United States,Stranger-friendly,2,3
+Nebelung,Long,United States,Talkative,3,1
+Nebelung,Long,United States,Intelligence,4,5
+Nebelung,Long,United States,Grooming needs,5,3
+Nebelung,Long,United States,Shedding,6,3
+Nebelung,Long,United States,Health issues,7,2
+Norwegian Forest Cat,Long,Norway,Energy,0,3
+Norwegian Forest Cat,Long,Norway,Needs company,1,5
+Norwegian Forest Cat,Long,Norway,Stranger-friendly,2,5
+Norwegian Forest Cat,Long,Norway,Talkative,3,1
+Norwegian Forest Cat,Long,Norway,Intelligence,4,4
+Norwegian Forest Cat,Long,Norway,Grooming needs,5,2
+Norwegian Forest Cat,Long,Norway,Shedding,6,3
+Norwegian Forest Cat,Long,Norway,Health issues,7,3
+Ocicat,Short,United States,Energy,0,5
+Ocicat,Short,United States,Needs company,1,5
+Ocicat,Short,United States,Stranger-friendly,2,5
+Ocicat,Short,United States,Talkative,3,3
+Ocicat,Short,United States,Intelligence,4,5
+Ocicat,Short,United States,Grooming needs,5,1
+Ocicat,Short,United States,Shedding,6,3
+Ocicat,Short,United States,Health issues,7,3
+Oriental,Short,United States,Energy,0,5
+Oriental,Short,United States,Needs company,1,5
+Oriental,Short,United States,Stranger-friendly,2,3
+Oriental,Short,United States,Talkative,3,5
+Oriental,Short,United States,Intelligence,4,5
+Oriental,Short,United States,Grooming needs,5,1
+Oriental,Short,United States,Shedding,6,3
+Oriental,Short,United States,Health issues,7,3
+Persian,Long,Iran (Persia),Energy,0,1
+Persian,Long,Iran (Persia),Needs company,1,4
+Persian,Long,Iran (Persia),Stranger-friendly,2,2
+Persian,Long,Iran (Persia),Talkative,3,1
+Persian,Long,Iran (Persia),Intelligence,4,3
+Persian,Long,Iran (Persia),Grooming needs,5,5
+Persian,Long,Iran (Persia),Shedding,6,4
+Persian,Long,Iran (Persia),Health issues,7,3
+Pixie-bob,Short or long,United States,Energy,0,4
+Pixie-bob,Short or long,United States,Needs company,1,4
+Pixie-bob,Short or long,United States,Stranger-friendly,2,4
+Pixie-bob,Short or long,United States,Talkative,3,1
+Pixie-bob,Short or long,United States,Intelligence,4,5
+Pixie-bob,Short or long,United States,Grooming needs,5,1
+Pixie-bob,Short or long,United States,Shedding,6,3
+Pixie-bob,Short or long,United States,Health issues,7,2
+Ragamuffin,Long,United States,Energy,0,3
+Ragamuffin,Long,United States,Needs company,1,3
+Ragamuffin,Long,United States,Stranger-friendly,2,5
+Ragamuffin,Long,United States,Talkative,3,1
+Ragamuffin,Long,United States,Intelligence,4,5
+Ragamuffin,Long,United States,Grooming needs,5,3
+Ragamuffin,Long,United States,Shedding,6,3
+Ragamuffin,Long,United States,Health issues,7,3
+Ragdoll,Long,United States,Energy,0,3
+Ragdoll,Long,United States,Needs company,1,5
+Ragdoll,Long,United States,Stranger-friendly,2,3
+Ragdoll,Long,United States,Talkative,3,1
+Ragdoll,Long,United States,Intelligence,4,3
+Ragdoll,Long,United States,Grooming needs,5,2
+Ragdoll,Long,United States,Shedding,6,3
+Ragdoll,Long,United States,Health issues,7,3
+Russian Blue,Short,Russia,Energy,0,3
+Russian Blue,Short,Russia,Needs company,1,3
+Russian Blue,Short,Russia,Stranger-friendly,2,1
+Russian Blue,Short,Russia,Talkative,3,1
+Russian Blue,Short,Russia,Intelligence,4,3
+Russian Blue,Short,Russia,Grooming needs,5,3
+Russian Blue,Short,Russia,Shedding,6,3
+Russian Blue,Short,Russia,Health issues,7,1
+Savannah,Short,United States,Energy,0,5
+Savannah,Short,United States,Needs company,1,5
+Savannah,Short,United States,Stranger-friendly,2,5
+Savannah,Short,United States,Talkative,3,1
+Savannah,Short,United States,Intelligence,4,5
+Savannah,Short,United States,Grooming needs,5,1
+Savannah,Short,United States,Shedding,6,3
+Savannah,Short,United States,Health issues,7,1
+Scottish Fold,Short or long,Scotland,Energy,0,3
+Scottish Fold,Short or long,Scotland,Needs company,1,3
+Scottish Fold,Short or long,Scotland,Stranger-friendly,2,3
+Scottish Fold,Short or long,Scotland,Talkative,3,1
+Scottish Fold,Short or long,Scotland,Intelligence,4,3
+Scottish Fold,Short or long,Scotland,Grooming needs,5,1
+Scottish Fold,Short or long,Scotland,Shedding,6,3
+Scottish Fold,Short or long,Scotland,Health issues,7,4
+Selkirk Rex,Rex or hairless,United States,Energy,0,3
+Selkirk Rex,Rex or hairless,United States,Needs company,1,3
+Selkirk Rex,Rex or hairless,United States,Stranger-friendly,2,3
+Selkirk Rex,Rex or hairless,United States,Talkative,3,3
+Selkirk Rex,Rex or hairless,United States,Intelligence,4,3
+Selkirk Rex,Rex or hairless,United States,Grooming needs,5,2
+Selkirk Rex,Rex or hairless,United States,Shedding,6,1
+Selkirk Rex,Rex or hairless,United States,Health issues,7,4
+Siamese,Short,Thailand,Energy,0,5
+Siamese,Short,Thailand,Needs company,1,5
+Siamese,Short,Thailand,Stranger-friendly,2,5
+Siamese,Short,Thailand,Talkative,3,5
+Siamese,Short,Thailand,Intelligence,4,5
+Siamese,Short,Thailand,Grooming needs,5,1
+Siamese,Short,Thailand,Shedding,6,2
+Siamese,Short,Thailand,Health issues,7,1
+Siberian,Long,Russia,Energy,0,5
+Siberian,Long,Russia,Needs company,1,4
+Siberian,Long,Russia,Stranger-friendly,2,3
+Siberian,Long,Russia,Talkative,3,1
+Siberian,Long,Russia,Intelligence,4,5
+Siberian,Long,Russia,Grooming needs,5,2
+Siberian,Long,Russia,Shedding,6,3
+Siberian,Long,Russia,Health issues,7,2
+Singapura,Short,Singapore,Energy,0,5
+Singapura,Short,Singapore,Needs company,1,5
+Singapura,Short,Singapore,Stranger-friendly,2,5
+Singapura,Short,Singapore,Talkative,3,1
+Singapura,Short,Singapore,Intelligence,4,5
+Singapura,Short,Singapore,Grooming needs,5,1
+Singapura,Short,Singapore,Shedding,6,3
+Singapura,Short,Singapore,Health issues,7,1
+Snowshoe,Short,United States,Energy,0,4
+Snowshoe,Short,United States,Needs company,1,4
+Snowshoe,Short,United States,Stranger-friendly,2,4
+Snowshoe,Short,United States,Talkative,3,5
+Snowshoe,Short,United States,Intelligence,4,5
+Snowshoe,Short,United States,Grooming needs,5,3
+Snowshoe,Short,United States,Shedding,6,3
+Snowshoe,Short,United States,Health issues,7,1
+Somali,Long,United States,Energy,0,5
+Somali,Long,United States,Needs company,1,5
+Somali,Long,United States,Stranger-friendly,2,5
+Somali,Long,United States,Talkative,3,1
+Somali,Long,United States,Intelligence,4,5
+Somali,Long,United States,Grooming needs,5,3
+Somali,Long,United States,Shedding,6,4
+Somali,Long,United States,Health issues,7,2
+Sphynx,Rex or hairless,Canada,Energy,0,3
+Sphynx,Rex or hairless,Canada,Needs company,1,5
+Sphynx,Rex or hairless,Canada,Stranger-friendly,2,5
+Sphynx,Rex or hairless,Canada,Talkative,3,5
+Sphynx,Rex or hairless,Canada,Intelligence,4,5
+Sphynx,Rex or hairless,Canada,Grooming needs,5,2
+Sphynx,Rex or hairless,Canada,Shedding,6,1
+Sphynx,Rex or hairless,Canada,Health issues,7,4
+Tonkinese,Short,Canada/United States,Energy,0,5
+Tonkinese,Short,Canada/United States,Needs company,1,5
+Tonkinese,Short,Canada/United States,Stranger-friendly,2,5
+Tonkinese,Short,Canada/United States,Talkative,3,5
+Tonkinese,Short,Canada/United States,Intelligence,4,5
+Tonkinese,Short,Canada/United States,Grooming needs,5,1
+Tonkinese,Short,Canada/United States,Shedding,6,3
+Tonkinese,Short,Canada/United States,Health issues,7,1
+Toyger,Short,United States,Energy,0,5
+Toyger,Short,United States,Needs company,1,3
+Toyger,Short,United States,Stranger-friendly,2,5
+Toyger,Short,United States,Talkative,3,5
+Toyger,Short,United States,Intelligence,4,5
+Toyger,Short,United States,Grooming needs,5,1
+Toyger,Short,United States,Shedding,6,3
+Toyger,Short,United States,Health issues,7,2
+Turkish Angora,Long,Turkey,Energy,0,5
+Turkish Angora,Long,Turkey,Needs company,1,5
+Turkish Angora,Long,Turkey,Stranger-friendly,2,5
+Turkish Angora,Long,Turkey,Talkative,3,3
+Turkish Angora,Long,Turkey,Intelligence,4,5
+Turkish Angora,Long,Turkey,Grooming needs,5,2
+Turkish Angora,Long,Turkey,Shedding,6,2
+Turkish Angora,Long,Turkey,Health issues,7,2
+Turkish Van,Long,Turkey,Energy,0,5
+Turkish Van,Long,Turkey,Needs company,1,4
+Turkish Van,Long,Turkey,Stranger-friendly,2,4
+Turkish Van,Long,Turkey,Talkative,3,5
+Turkish Van,Long,Turkey,Intelligence,4,5
+Turkish Van,Long,Turkey,Grooming needs,5,2
+Turkish Van,Long,Turkey,Shedding,6,3
+Turkish Van,Long,Turkey,Health issues,7,1
+York Chocolate,Long,United States,Energy,0,5
+York Chocolate,Long,United States,Needs company,1,4
+York Chocolate,Long,United States,Stranger-friendly,2,4
+York Chocolate,Long,United States,Talkative,3,5
+York Chocolate,Long,United States,Intelligence,4,5
+York Chocolate,Long,United States,Grooming needs,5,3
+York Chocolate,Long,United States,Shedding,6,3
+York Chocolate,Long,United States,Health issues,7,1
