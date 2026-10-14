@@ -1,0 +1,117 @@
+/* =========================================================
+   Design system — FIT3179 DV2 "Pedigree vs Moggy"
+   One colour = one meaning, everywhere on the page.
+   ========================================================= */
+:root {
+  /* Surface & text */
+  --bg: #FAF7F2;          /* warm off-white page */
+  --surface: #FFFFFF;     /* chart cards */
+  --ink: #2B2622;         /* body text */
+  --ink-soft: #6B635B;    /* captions, sources */
+  --rule: #E4DED5;        /* hairlines */
+
+  /* Countries (Okabe-Ito, colour-blind safe). Every other country = --context */
+  --au: #0072B2;          /* Australia */
+  --my: #E69F00;          /* Malaysia (marks) */
+  --my-ink: #A35F00;      /* Malaysia (text: orange fails contrast on cream) */
+  --context: #BDB6AC;     /* everything not being highlighted */
+
+  /* Coat group (never reused for anything else). Validated as a set with
+     scripts from the dataviz checker; green/pink need a legend or labels for CVD. */
+  --coat-short: #009E73;
+  --coat-long: #CC79A7;
+  --coat-mixed: #882255;     /* "Short or long" */
+  --coat-rexhairless: #7B5EA7;
+
+  /* Story accent: "adopted or stray" = the moggy route. Used ONLY for that. */
+  --accent: #D55E00;
+  --accent-ink: #A34700;  /* darker step for text on white (WCAG AA) */
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Nunito Sans", system-ui, sans-serif;
+
+  /* Spacing scale — use ONLY these */
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 32px;
+  --s4: 64px;
+  --s5: 96px;
+
+  --page: 1180px;         /* fits a 1280px laptop with no horizontal scroll */
+  --measure: 60ch;        /* ~10 words per line, per DV1 feedback */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ---------- Grid: every block snaps to the same 12 columns ---------- */
+.page { max-width: var(--page); margin: 0 auto; padding: 0 var(--s3); }
+
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: var(--s3);
+  row-gap: var(--s2);
+  margin-bottom: var(--s5);
+}
+
+/* Layout patterns — use only these three to keep sight lines few */
+.full   > * { grid-column: 1 / -1; }
+.split  > .text  { grid-column: 1 / 5; align-self: start; position: sticky; top: var(--s3); }  /* text left, stays beside tall charts */
+.split  > .chart, .split > .stats { grid-column: 5 / -1; }     /* chart right, 8 cols */
+.split.flip > .text  { grid-column: 9 / -1; grid-row: 1; }
+.split.flip > .chart { grid-column: 1 / 9; grid-row: 1; }
+.pair   > .chart { grid-column: span 6; }     /* two charts side by side */
+
+/* ---------- Typography ---------- */
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0; }
+h1 { font-size: 52px; letter-spacing: -0.01em; margin-bottom: var(--s2); }
+h2 { font-size: 34px; margin-bottom: var(--s2); }
+h3 { font-size: 20px; font-weight: 500; }
+
+p { max-width: var(--measure); margin: 0 0 var(--s2); }
+.lede { font-size: 21px; color: var(--ink-soft); max-width: var(--measure); }
+strong { font-weight: 800; }
+
+/* Inline colour keys in text — replaces legends where possible */
+.au { color: var(--au); font-weight: 700; }
+.my { color: var(--my-ink); font-weight: 700; }
+
+/* ---------- Hero stats (sit in the chart column, so they share its left edge) ---------- */
+.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3); align-content: start; }
+.stat .num { font-family: var(--font-display); font-size: 44px; display: block; }
+.stat .label { font-size: 14px; color: var(--ink-soft); }
+
+/* ---------- Charts ---------- */
+.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: var(--s2); }
+.chart-title { font-weight: 700; font-size: 16px; margin-bottom: var(--s1); }
+.vis { width: 100%; }
+.chart-note { font-size: 14px; color: var(--ink-soft); margin: 0 0 var(--s1); max-width: none; }
+
+/* Chart controls (Vega dropdowns) in the page's own type */
+.vega-bindings { font-family: var(--font-body); font-size: 14px; color: var(--ink-soft); margin-bottom: var(--s1); display: flex; flex-wrap: wrap; gap: var(--s2); }
+.vega-bindings select { font-family: var(--font-body); font-size: 14px; color: var(--ink); padding: 4px 8px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+.vega-embed { width: 100%; }
+.source { font-size: 13px; color: var(--ink-soft); margin-top: var(--s1); max-width: none; }
+
+/* ---------- Footer / metadata ---------- */
+footer { border-top: 1px solid var(--rule); padding: var(--s3) 0 var(--s5); font-size: 14px; color: var(--ink-soft); }
+footer p { max-width: none; }
+
+/* ---------- Narrow screens: stack everything ---------- */
+@media (max-width: 900px) {
+  .split > .text, .split > .chart,
+  .split.flip > .text, .split.flip > .chart,
+  .pair > .chart { grid-column: 1 / -1; grid-row: auto; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  h1 { font-size: 40px; }
+}
