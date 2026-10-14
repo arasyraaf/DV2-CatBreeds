@@ -1,0 +1,126 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Share of breeds in each coat group whose temperament description includes each word",
+  "data": {
+    "url": "data/heatmap_temperament.csv"
+  },
+  "width": "container",
+  "height": 210,
+  "encoding": {
+    "x": {
+      "field": "word",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Affectionate",
+        "Intelligent",
+        "Playful",
+        "Social",
+        "Active",
+        "Gentle",
+        "Loyal",
+        "Curious",
+        "Friendly",
+        "Calm",
+        "Independent",
+        "Quiet"
+      ],
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 12,
+        "labelPadding": 8
+      }
+    },
+    "y": {
+      "field": "group_label",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Short (32)",
+        "Long (19)",
+        "Short or long (9)",
+        "Rex or hairless (7)"
+      ],
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 12,
+        "labelPadding": 8
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2,
+        "cornerRadius": 3
+      },
+      "encoding": {
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "title": "% of breeds described this way",
+          "scale": {
+            "range": ["#E3DCD0", "#BFB5A8", "#8C8176", "#4E463F", "#2B2622"],
+            "domain": [
+              0,
+              100
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "gradientLength": 200
+          }
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "title": "Coat group"
+          },
+          {
+            "field": "word",
+            "title": "Temperament word"
+          },
+          {
+            "field": "count",
+            "title": "Breeds described this way"
+          },
+          {
+            "field": "n",
+            "title": "Breeds in group"
+          },
+          {
+            "field": "pct",
+            "title": "Share (%)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 12
+      },
+      "encoding": {
+        "text": {
+          "field": "pct",
+          "type": "quantitative",
+          "format": ".0f"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.pct >= 60",
+            "value": "#FFFFFF"
+          },
+          "value": "#2B2622"
+        }
+      }
+    }
+  ]
+}

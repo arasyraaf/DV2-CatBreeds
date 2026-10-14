@@ -1,0 +1,200 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Breeds per country of origin, 67 breeds",
+  "width": "container",
+  "height": 360,
+  "projection": {
+    "type": "equalEarth",
+    "scale": 135,
+    "translate": [
+      350,
+      190
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/world_110m.topo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#EEE9E2",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6
+      }
+    },
+    {
+      "data": {
+        "url": "data/origin_counts.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "fill": "#2B2622",
+        "fillOpacity": 0.78,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "n_breeds",
+          "type": "quantitative",
+          "scale": {
+            "type": "sqrt",
+            "domain": [
+              1,
+              30
+            ],
+            "range": [
+              50,
+              2600
+            ]
+          },
+          "legend": {
+            "title": "Breeds developed here",
+            "orient": "bottom-left",
+            "values": [
+              1,
+              5,
+              15,
+              30
+            ],
+            "symbolFillColor": "#2B2622",
+            "direction": "horizontal"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "country",
+            "title": "Origin"
+          },
+          {
+            "field": "n_breeds",
+            "title": "Breeds"
+          },
+          {
+            "field": "breeds",
+            "title": "Which breeds"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "label": "United States",
+            "lon": -60,
+            "lat": 33,
+            "alon": -80,
+            "alat": 36
+          },
+          {
+            "label": "United Kingdom",
+            "lon": -40,
+            "lat": 62,
+            "alon": -4,
+            "alat": 56
+          },
+          {
+            "label": "Russia",
+            "lon": 100,
+            "lat": 74
+          },
+          {
+            "label": "Thailand",
+            "lon": 118,
+            "lat": 19,
+            "alon": 101.5,
+            "alat": 15
+          }
+        ]
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "rule",
+            "stroke": "#2B2622",
+            "strokeWidth": 0.8
+          },
+          "transform": [
+            {
+              "filter": "datum.alon != null"
+            }
+          ],
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "longitude2": {
+              "field": "alon"
+            },
+            "latitude2": {
+              "field": "alat"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 4,
+            "strokeJoin": "round"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "fontWeight": 700,
+            "color": "#2B2622"
+          },
+          "encoding": {
+            "longitude": {
+              "field": "lon",
+              "type": "quantitative"
+            },
+            "latitude": {
+              "field": "lat",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "label"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

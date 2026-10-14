@@ -1,0 +1,20 @@
+country_code,country,lat,lon,n_breeds,breeds
+US,United States,39,-98,30,American Bobtail; American Curl; American Shorthair; American Wirehair; Balinese; Bambino; Bengal; Bombay; California Spangled; Chantilly-Tiffany; Cheetoh; Colorpoint Shorthair; Exotic Shorthair; Himalayan; Javanese; LaPerm; Maine Coon; Munchkin; Nebelung; Ocicat; Oriental; Pixie-bob; Ragamuffin; Ragdoll; Savannah; Selkirk Rex; Snowshoe; Somali; Toyger; York Chocolate
+GB,United Kingdom,54,-2,8,British Longhair; British Shorthair; Burmilla; Cornish Rex; Devon Rex; Havana Brown; Malayan; Scottish Fold
+RU,Russia,61,100,4,Donskoy; Kurilian; Russian Blue; Siberian
+EG,Egypt,26,30,3,Abyssinian; Chausie; Egyptian Mau
+CA,Canada,56,-106,3,Cymric; Sphynx; Tonkinese
+TH,Thailand,15,101,3,Khao Manee; Korat; Siamese
+FR,France,46,2,2,Birman; Chartreux
+MM,Myanmar,21,96,2,Burmese; European Burmese
+TR,Turkey,39,35,2,Turkish Angora; Turkish Van
+GR,Greece,39,22,1,Aegean
+AE,United Arab Emirates,24,54,1,Arabian Mau
+AU,Australia,-25,134,1,Australian Mist
+CY,Cyprus,35,33,1,Cyprus
+CN,China,35,103,1,Dragon Li
+JP,Japan,36,138,1,Japanese Bobtail
+IM,Isle of Man,54.2,-4.5,1,Manx
+NO,Norway,61,9,1,Norwegian Forest Cat
+IR,Iran,32,53,1,Persian
+SG,Singapore,1.35,103.8,1,Singapura

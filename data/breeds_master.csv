@@ -1,0 +1,68 @@
+id,name,origin,country_code,coat,life_min,life_max,weight_kg_min,weight_kg_max,temperament,adaptability,affection_level,child_friendly,dog_friendly,energy_level,grooming,health_issues,intelligence,shedding_level,social_needs,stranger_friendly,vocalisation,hairless,rex,short_legs,hypoallergenic,natural,rare,lap
+abys,Abyssinian,Egypt,EG,Short,14.0,17.0,3.6,5.4,"Active, Energetic, Independent, Intelligent, Gentle, Curious, Playful",5,5,3,4,5,1,2,5,2,5,5,1,0,0,0,0,1,0,1
+aege,Aegean,Greece,GR,Long,9.0,12.0,4.0,5.4,"Affectionate, Social, Intelligent, Playful, Active, Adaptable",5,4,4,4,3,3,1,3,3,4,4,3,0,0,0,0,0,0,
+abob,American Bobtail,United States,US,Short or long,11.0,15.0,5.4,7.3,"Intelligent, Interactive, Lively, Playful, Sensitive, Devoted",5,5,4,5,3,1,1,5,3,3,3,3,0,0,0,0,0,0,1
+acur,American Curl,United States,US,Short or long,12.0,16.0,3.2,5.0,"Affectionate, Curious, Intelligent, Interactive, Lively, Playful, Social",5,5,4,5,3,2,1,3,3,3,3,3,0,0,0,0,0,0,1
+asho,American Shorthair,United States,US,Short,15.0,20.0,5.0,6.8,"Active, Curious, Easy Going, Playful, Calm, Adaptable",5,5,4,5,3,1,3,3,3,4,3,3,0,0,0,0,1,0,1
+awir,American Wirehair,United States,US,Short,14.0,18.0,3.6,6.8,"Affectionate, Curious, Gentle, Intelligent, Interactive, Lively, Loyal, Playful, Sensible, Social",5,5,4,5,3,1,3,3,1,3,3,3,0,0,0,0,0,0,1
+amau,Arabian Mau,United Arab Emirates,AE,Short,12.0,14.0,4.0,7.3,"Affectionate, Agile, Curious, Independent, Playful, Loyal, Active",5,5,4,5,4,1,1,3,1,3,3,1,0,0,0,0,1,0,
+amis,Australian Mist,Australia,AU,Short,12.0,16.0,3.6,6.8,"Lively, Social, Fun-loving, Relaxed, Affectionate, Tolerant",5,5,4,5,4,3,1,4,3,4,4,3,0,0,0,0,0,0,1
+bali,Balinese,United States,US,Long,12.0,20.0,2.7,5.0,"Affectionate, Intelligent, Playful, Active, Social, Curious",5,5,4,5,5,3,3,5,3,5,5,5,0,0,0,1,0,0,
+bamb,Bambino,United States,US,Hairless,12.0,14.0,2.3,4.0,"Affectionate, Lively, Friendly, Intelligent, Social, Playful",5,5,4,5,5,1,1,5,1,3,3,3,1,0,1,0,0,0,1
+beng,Bengal,United States,US,Short,12.0,16.0,4.5,8.2,"Alert, Agile, Energetic, Demanding, Intelligent, Curious, Playful",5,5,4,5,5,1,3,5,3,5,3,5,0,0,0,1,0,0,0
+birm,Birman,France,FR,Long,12.0,16.0,4.5,6.8,"Affectionate, Active, Gentle, Social, Quiet, Loyal",5,5,4,5,3,2,1,3,3,4,3,1,0,0,0,0,0,0,1
+bomb,Bombay,United States,US,Short,12.0,18.0,3.6,6.8,"Affectionate, Dependent, Gentle, Intelligent, Playful, Social",5,5,4,5,3,1,3,5,3,4,4,5,0,0,0,0,0,0,1
+bslo,British Longhair,United Kingdom,GB,Long,12.0,15.0,5.4,8.2,"Affectionate, Easy Going, Independent, Intelligent, Loyal, Social, Calm",5,5,4,5,4,5,1,5,1,3,4,1,0,0,0,0,0,0,
+bsho,British Shorthair,United Kingdom,GB,Short,12.0,17.0,5.4,9.1,"Affectionate, Easy Going, Gentle, Loyal, Patient, Calm, Independent",5,4,4,5,2,2,2,3,4,3,2,1,0,0,0,0,1,0,1
+bure,Burmese,Myanmar (Burma),MM,Short,15.0,18.0,3.6,6.4,"Curious, Intelligent, Gentle, Social, Interactive, Playful, Lively, Affectionate",5,5,4,5,4,1,3,5,3,5,5,5,0,0,0,1,0,0,1
+buri,Burmilla,United Kingdom,GB,Short,10.0,15.0,3.6,6.4,"Easy Going, Friendly, Intelligent, Lively, Playful, Social, Affectionate",5,5,4,4,3,3,3,3,3,4,3,5,0,0,0,0,0,0,1
+cspa,California Spangled,United States,US,Short,10.0,14.0,3.6,6.8,"Affectionate, Curious, Intelligent, Loyal, Social, Active, Athletic",5,5,4,5,5,1,1,5,1,3,4,1,0,0,0,0,0,0,
+ctif,Chantilly-Tiffany,United States,US,Long,14.0,16.0,3.6,5.4,"Affectionate, Demanding, Interactive, Loyal, Devoted, Sweet",5,5,4,5,4,5,1,5,5,3,4,5,0,0,0,0,0,0,1
+char,Chartreux,France,FR,Short,12.0,15.0,5.4,7.3,"Affectionate, Loyal, Intelligent, Social, Lively, Playful, Calm, Observant",5,5,4,5,2,1,2,4,3,5,5,1,0,1,0,1,0,0,1
+chau,Chausie,Egypt/United States,EG,Hybrid,12.0,14.0,6.8,11.3,"Affectionate, Intelligent, Playful, Social, Active, Athletic, Loyal",5,5,4,5,4,3,1,5,3,3,4,1,0,0,0,0,0,0,
+chee,Cheetoh,United States,US,Short,12.0,14.0,6.8,10.4,"Affectionate, Gentle, Intelligent, Social, Friendly, Playful",5,5,4,5,4,1,1,5,1,3,4,5,0,0,0,0,0,0,
+csho,Colorpoint Shorthair,United States,US,Short,12.0,16.0,2.3,4.5,"Affectionate, Intelligent, Playful, Social, Active, Sensitive",3,4,4,4,4,2,2,5,3,4,2,5,0,0,0,0,0,0,1
+crex,Cornish Rex,United Kingdom,GB,Curly (rex),11.0,15.0,2.7,4.5,"Affectionate, Intelligent, Active, Curious, Playful, Social",5,5,4,5,5,1,2,5,1,5,3,1,0,1,0,1,0,0,1
+cymr,Cymric,Isle of Man/Canada,CA,Long,8.0,14.0,3.6,5.9,"Gentle, Loyal, Intelligent, Playful, Devoted",5,5,4,5,5,3,3,5,5,5,3,3,0,0,0,0,0,0,1
+cypr,Cyprus,Cyprus,CY,Short or long,12.0,15.0,3.6,7.3,"Affectionate, Social, Loyal, Curious, Playful",5,5,4,5,4,3,1,3,3,3,4,3,0,0,0,0,1,0,1
+drex,Devon Rex,United Kingdom,GB,Curly (rex),10.0,15.0,2.3,4.5,"Highly interactive, Mischievous, Loyal, Social, Playful, Affectionate",5,5,4,5,5,1,3,5,1,5,5,1,0,1,0,1,0,0,1
+dons,Donskoy,Russia,RU,Hairless,12.0,15.0,3.2,6.8,"Playful, Affectionate, Loyal, Social, Intelligent, Gentle",4,4,3,3,4,2,3,3,1,5,5,2,1,0,0,0,0,1,
+lihu,Dragon Li,China,CN,Short,12.0,15.0,4.0,5.4,"Intelligent, Friendly, Gentle, Loving, Loyal, Independent",3,3,3,3,3,1,1,3,3,4,3,3,0,0,0,0,1,0,
+emau,Egyptian Mau,Egypt,EG,Short,13.0,16.0,3.6,6.4,"Agile, Dependent, Gentle, Intelligent, Lively, Loyal, Playful, Devoted",2,5,3,3,5,1,3,4,3,4,2,3,0,0,0,0,1,0,1
+ebur,European Burmese,Myanmar (Burma),MM,Short,10.0,15.0,3.2,6.4,"Sweet, Affectionate, Loyal, Intelligent, Playful, Social",5,5,4,4,4,1,4,5,3,5,5,4,0,0,0,0,0,0,1
+esho,Exotic Shorthair,United States,US,Short,12.0,15.0,4.5,6.8,"Affectionate, Sweet, Loyal, Quiet, Peaceful, Gentle, Calm",5,5,3,3,3,2,3,3,2,4,2,1,0,0,0,0,0,0,1
+hbro,Havana Brown,United Kingdom,GB,Short,12.0,15.0,3.6,5.4,"Affectionate, Curious, Demanding, Friendly, Intelligent, Playful",5,5,4,5,3,1,1,5,3,5,3,1,0,0,0,0,0,0,1
+hima,Himalayan,United States,US,Long,9.0,15.0,4.0,6.4,"Dependent, Gentle, Intelligent, Quiet, Social, Sweet, Calm",5,5,2,2,1,5,3,3,4,4,2,1,0,0,0,0,0,0,1
+jbob,Japanese Bobtail,Japan,JP,Short or long,14.0,16.0,2.7,4.5,"Active, Agile, Clever, Easy Going, Intelligent, Lively, Loyal, Playful, Social",5,5,4,5,5,1,1,5,3,5,5,5,0,0,0,0,1,0,1
+java,Javanese,United States,US,Long,10.0,15.0,2.3,4.5,"Active, Devoted, Intelligent, Playful, Affectionate",4,5,4,4,5,1,3,5,2,5,3,5,0,0,0,1,0,0,
+khao,Khao Manee,Thailand,TH,Short,10.0,12.0,3.6,5.4,"Calm, Relaxed, Talkative, Playful, Warm, Intelligent, Social",4,4,3,3,3,3,1,4,3,3,3,5,0,0,0,0,0,0,1
+kora,Korat,Thailand,TH,Short,10.0,15.0,2.7,5.0,"Active, Loyal, Highly intelligent, Expressive, Trainable, Affectionate",5,5,4,5,3,1,1,5,3,5,2,3,0,0,0,0,0,1,
+kuri,Kurilian,Russia,RU,Short or long,15.0,20.0,3.6,6.8,"Independent, Highly intelligent, Clever, Inquisitive, Sociable, Playful, Trainable, Gentle",5,5,5,5,5,1,1,5,2,5,5,3,0,0,0,0,1,0,
+lape,LaPerm,United States,US,Curly (rex),10.0,15.0,2.7,4.5,"Affectionate, Friendly, Gentle, Intelligent, Playful, Quiet",5,5,4,5,4,1,1,5,3,4,4,3,0,1,0,1,0,0,1
+mcoo,Maine Coon,United States,US,Long,12.0,15.0,6.8,11.3,"Adaptable, Intelligent, Loving, Gentle, Independent, Playful, Friendly",5,5,4,5,3,3,3,5,3,3,5,1,0,0,0,0,1,0,1
+mala,Malayan,United Kingdom,GB,Short,12.0,18.0,3.6,6.4,"Affectionate, Interactive, Playful, Social, Vocal, People-oriented",5,5,4,5,5,1,1,3,1,3,3,5,0,0,0,0,0,0,
+manx,Manx,Isle of Man,IM,Short or long,12.0,14.0,3.6,5.9,"Easy Going, Intelligent, Loyal, Playful, Social, Gentle, Affectionate",5,5,4,5,5,1,3,5,5,5,3,3,0,0,0,0,1,0,1
+munc,Munchkin,United States,US,Short or long,12.0,15.0,2.7,4.0,"Agile, Easy Going, Intelligent, Playful, Affectionate, Outgoing",5,5,4,5,4,2,3,5,3,5,5,3,0,0,1,0,0,0,1
+nebe,Nebelung,United States,US,Long,11.0,16.0,3.2,5.0,"Gentle, Quiet, Shy, Playful, Reserved, Loyal",5,5,4,4,3,3,2,5,3,3,3,1,0,0,0,0,0,1,1
+norw,Norwegian Forest Cat,Norway,NO,Long,14.0,16.0,5.4,7.3,"Sweet, Active, Intelligent, Social, Playful, Lively, Curious, Independent",5,5,4,5,3,2,3,4,3,5,5,1,0,0,0,0,1,0,
+ocic,Ocicat,United States,US,Short,12.0,18.0,4.0,6.8,"Active, Agile, Curious, Demanding, Friendly, Gentle, Lively, Playful, Social",5,5,4,5,5,1,3,5,3,5,5,3,0,0,0,1,0,0,
+orie,Oriental,United States,US,Short,12.0,15.0,2.3,4.5,"Energetic, Affectionate, Intelligent, Social, Playful, Curious",5,5,4,5,5,1,3,5,3,5,3,5,0,0,0,1,0,0,1
+pers,Persian,Iran (Persia),IR,Long,12.0,17.0,4.0,6.4,"Affectionate, Loyal, Sedate, Quiet, Sweet, Gentle, Calm",5,5,2,2,1,5,3,3,4,4,2,1,0,0,0,0,1,0,1
+pixi,Pixie-bob,United States,US,Short or long,13.0,16.0,5.0,7.7,"Affectionate, Social, Intelligent, Loyal, Devoted, Active",5,5,4,5,4,1,2,5,3,4,4,1,0,0,0,0,0,0,1
+raga,Ragamuffin,United States,US,Long,12.0,16.0,6.8,9.1,"Affectionate, Friendly, Gentle, Calm, Sweet, Patient",5,5,4,5,3,3,3,5,3,3,5,1,0,0,0,0,0,0,1
+ragd,Ragdoll,United States,US,Long,12.0,17.0,6.8,9.1,"Affectionate, Friendly, Gentle, Quiet, Easygoing, Docile, Calm",5,5,4,5,3,2,3,3,3,5,3,1,0,0,0,0,0,0,1
+rblu,Russian Blue,Russia,RU,Short,15.0,20.0,3.2,6.8,"Active, Dependent, Easy Going, Gentle, Intelligent, Loyal, Playful, Quiet, Reserved",3,3,3,3,3,3,1,3,3,3,1,1,0,0,0,1,1,0,1
+sava,Savannah,United States,US,Hybrid,12.0,20.0,5.4,11.3,"Curious, Social, Intelligent, Loyal, Outgoing, Adventurous, Affectionate, Active",5,5,4,5,5,1,1,5,3,5,5,1,0,0,0,0,0,0,
+sfol,Scottish Fold,Scotland,GB,Short or long,11.0,14.0,4.0,5.9,"Affectionate, Intelligent, Loyal, Playful, Social, Sweet, Loving, Gentle",5,5,4,5,3,1,4,3,3,3,3,1,0,0,0,0,0,0,
+srex,Selkirk Rex,United States,US,Curly (rex),14.0,15.0,5.0,7.3,"Active, Affectionate, Dependent, Gentle, Patient, Playful, Quiet, Social",5,5,4,5,3,2,4,3,1,3,3,3,0,1,0,1,0,0,1
+siam,Siamese,Thailand,TH,Short,12.0,20.0,3.6,6.8,"Active, Agile, Clever, Sociable, Loving, Energetic, Affectionate",5,5,4,5,5,1,1,5,2,5,5,5,0,0,0,1,0,0,1
+sibe,Siberian,Russia,RU,Long,11.0,18.0,6.8,9.1,"Curious, Intelligent, Loyal, Sweet, Agile, Playful, Affectionate, Adventurous",5,5,4,5,5,2,2,5,3,4,3,1,0,0,0,1,1,0,1
+sing,Singapura,Singapore,SG,Short,12.0,15.0,1.8,3.6,"Affectionate, Curious, Easy Going, Intelligent, Interactive, Lively, Loyal, Playful",5,5,4,5,5,1,1,5,3,5,5,1,0,0,0,0,0,0,1
+snow,Snowshoe,United States,US,Short,14.0,19.0,4.0,5.4,"Affectionate, Social, Intelligent, Sweet-tempered, Active, Vocal",5,5,4,5,4,3,1,5,3,4,4,5,0,0,0,0,0,0,1
+soma,Somali,United States,US,Long,11.0,16.0,3.6,5.4,"Mischievous, Tenacious, Intelligent, Affectionate, Gentle, Interactive, Loyal, Active",5,5,3,4,5,3,2,5,4,5,5,1,0,0,0,0,0,0,
+sphy,Sphynx,Canada,CA,Hairless,12.0,16.0,3.6,6.4,"Loyal, Inquisitive, Friendly, Quiet, Gentle, Affectionate, Social",5,5,4,5,3,2,4,5,1,5,5,5,1,0,0,1,0,1,1
+tonk,Tonkinese,Canada/United States,CA,Short,14.0,16.0,2.7,5.4,"Curious, Intelligent, Social, Lively, Outgoing, Playful, Affectionate",5,5,4,5,5,1,1,5,3,5,5,5,0,0,0,0,0,0,1
+toyg,Toyger,United States,US,Short,12.0,15.0,4.5,6.8,"Playful, Social, Intelligent, Friendly, Outgoing, Active",5,5,4,5,5,1,2,5,3,3,5,5,0,0,0,0,0,0,1
+tang,Turkish Angora,Turkey,TR,Long,12.0,18.0,3.2,6.4,"Affectionate, Agile, Clever, Gentle, Intelligent, Playful, Social, Athletic",5,5,4,5,5,2,2,5,2,5,5,3,0,0,0,0,1,0,
+tvan,Turkish Van,Turkey,TR,Long,12.0,17.0,4.5,9.1,"Agile, Intelligent, Loyal, Playful, Energetic, Active, Affectionate",5,5,4,5,5,2,1,5,3,4,4,5,0,0,0,0,1,0,
+ycho,York Chocolate,United States,US,Long,13.0,15.0,4.5,7.3,"Playful, Social, Intelligent, Curious, Friendly, Affectionate, Active",5,5,4,5,5,3,1,5,3,4,4,5,0,0,0,0,0,0,1

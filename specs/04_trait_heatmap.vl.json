@@ -1,0 +1,219 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "67 breeds x 8 trait scores, sortable by any trait, with a coat-group column",
+  "data": {
+    "url": "data/traits_long.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "score": "number",
+        "trait_order": "number"
+      }
+    }
+  },
+  "width": "container",
+  "height": {
+    "step": 13
+  },
+  "params": [
+    {
+      "name": "sortBy",
+      "value": "Grooming needs",
+      "bind": {
+        "input": "select",
+        "name": "Sort breeds by ",
+        "options": [
+          "Energy",
+          "Needs company",
+          "Stranger-friendly",
+          "Talkative",
+          "Intelligence",
+          "Grooming needs",
+          "Shedding",
+          "Health issues"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "datum.trait === sortBy ? datum.score : 0",
+      "as": "sortScore"
+    },
+    {
+      "joinaggregate": [
+        {
+          "op": "max",
+          "field": "sortScore",
+          "as": "sortKey"
+        }
+      ],
+      "groupby": [
+        "name"
+      ]
+    },
+    {
+      "calculate": "datum.sortKey * 100 - indexof(['Short','Long','Short or long','Rex or hairless'], datum.coat)",
+      "as": "sortKey2"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "name",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "field": "sortKey2",
+        "op": "max",
+        "order": "descending"
+      },
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 11,
+        "labelPadding": 6
+      }
+    },
+    "x": {
+      "field": "trait",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Coat",
+        "Energy",
+        "Needs company",
+        "Stranger-friendly",
+        "Talkative",
+        "Intelligence",
+        "Grooming needs",
+        "Shedding",
+        "Health issues"
+      ],
+      "axis": {
+        "orient": "top",
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 12,
+        "labelFontWeight": 700,
+        "labelPadding": 18,
+        "labelExpr": "split(replace(datum.label, '-', '- '), ' ')",
+        "labelLineHeight": 14,
+        "labelBaseline": "bottom"
+      }
+    }
+  },
+  "layer": [
+    {
+      "description": "Trait scores",
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "score",
+          "type": "ordinal",
+          "title": "Score (1 = low, 5 = high)",
+          "scale": {
+            "domain": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "range": ["#E3DCD0", "#BFB5A8", "#8C8176", "#4E463F", "#2B2622"]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 160
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Breed"
+          },
+          {
+            "field": "coat",
+            "title": "Coat"
+          },
+          {
+            "field": "trait",
+            "title": "Trait"
+          },
+          {
+            "field": "score",
+            "title": "Score (1 to 5)"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Coat column: one cell per breed, coloured by coat group",
+      "transform": [
+        {
+          "filter": "datum.trait_order == 0"
+        },
+        {
+          "calculate": "'Coat'",
+          "as": "trait"
+        }
+      ],
+      "mark": {
+        "type": "rect",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "coat",
+          "type": "nominal",
+          "title": "Coat",
+          "scale": {
+            "domain": [
+              "Short",
+              "Long",
+              "Short or long",
+              "Rex or hairless"
+            ],
+            "range": [
+              "#009E73",
+              "#CC79A7",
+              "#882255",
+              "#7B5EA7"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 160
+          }
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Breed"
+          },
+          {
+            "field": "coat",
+            "title": "Coat"
+          }
+        ]
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    },
+    "legend": {
+      "color": "independent"
+    }
+  }
+}
