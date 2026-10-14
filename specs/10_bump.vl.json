@@ -1,0 +1,355 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Rank of five breeds by search share, by year",
+  "data": {
+    "url": "data/trends_bump.csv"
+  },
+  "spacing": 28,
+  "vconcat": [
+    {
+      "title": {
+        "text": "Australia",
+        "color": "#0072B2",
+        "fontSize": 16,
+        "anchor": "start"
+      },
+      "transform": [
+        {
+          "filter": "datum.country === 'Australia'"
+        },
+        {
+          "calculate": "'20' + slice(datum.window, 5, 7)",
+          "as": "yr"
+        },
+        {
+          "calculate": "(datum.breed === 'Ragdoll' || datum.breed === 'Persian')",
+          "as": "hl"
+        }
+      ],
+      "width": 440,
+      "height": 190,
+      "encoding": {
+        "x": {
+          "field": "yr",
+          "type": "ordinal",
+          "title": "12 months to October",
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true,
+            "domain": [
+              0.6,
+              5.4
+            ]
+          },
+          "title": "Rank",
+          "axis": {
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "grid": false,
+            "domain": false,
+            "labels": true,
+            "ticks": false
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "interpolate": "monotone"
+          },
+          "encoding": {
+            "detail": {
+              "field": "breed"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.hl",
+                "value": "#0072B2"
+              },
+              "value": "#C9C2B7"
+            },
+            "strokeWidth": {
+              "condition": {
+                "test": "datum.hl",
+                "value": 4
+              },
+              "value": 1.6
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 90
+          },
+          "encoding": {
+            "color": {
+              "condition": {
+                "test": "datum.hl",
+                "value": "#0072B2"
+              },
+              "value": "#C9C2B7"
+            },
+            "tooltip": [
+              {
+                "field": "breed",
+                "title": "Breed"
+              },
+              {
+                "field": "yr",
+                "title": "12 months to Oct"
+              },
+              {
+                "field": "rank",
+                "title": "Rank"
+              },
+              {
+                "field": "share",
+                "title": "Share (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.yr === '2026'"
+            },
+            {
+              "filter": "datum.hl"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "fontSize": 12,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {
+              "field": "breed"
+            },
+            "color": {
+              "value": "#2B2622"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.yr === '2026'"
+            },
+            {
+              "filter": "!datum.hl"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "fontSize": 12,
+            "fontWeight": "normal"
+          },
+          "encoding": {
+            "text": {
+              "field": "breed"
+            },
+            "color": {
+              "value": "#6B635B"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "text": "Malaysia",
+        "color": "#A35F00",
+        "fontSize": 16,
+        "anchor": "start"
+      },
+      "transform": [
+        {
+          "filter": "datum.country === 'Malaysia'"
+        },
+        {
+          "calculate": "'20' + slice(datum.window, 5, 7)",
+          "as": "yr"
+        },
+        {
+          "calculate": "(datum.breed === 'Ragdoll' || datum.breed === 'Persian')",
+          "as": "hl"
+        }
+      ],
+      "width": 440,
+      "height": 190,
+      "encoding": {
+        "x": {
+          "field": "yr",
+          "type": "ordinal",
+          "title": "12 months to October",
+          "axis": {
+            "labelAngle": 0,
+            "labelFontSize": 11
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": {
+            "reverse": true,
+            "domain": [
+              0.6,
+              5.4
+            ]
+          },
+          "title": null,
+          "axis": {
+            "values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "grid": false,
+            "domain": false,
+            "labels": false,
+            "ticks": false
+          }
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "line",
+            "interpolate": "monotone"
+          },
+          "encoding": {
+            "detail": {
+              "field": "breed"
+            },
+            "color": {
+              "condition": {
+                "test": "datum.hl",
+                "value": "#E69F00"
+              },
+              "value": "#C9C2B7"
+            },
+            "strokeWidth": {
+              "condition": {
+                "test": "datum.hl",
+                "value": 4
+              },
+              "value": 1.6
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "circle",
+            "size": 90
+          },
+          "encoding": {
+            "color": {
+              "condition": {
+                "test": "datum.hl",
+                "value": "#E69F00"
+              },
+              "value": "#C9C2B7"
+            },
+            "tooltip": [
+              {
+                "field": "breed",
+                "title": "Breed"
+              },
+              {
+                "field": "yr",
+                "title": "12 months to Oct"
+              },
+              {
+                "field": "rank",
+                "title": "Rank"
+              },
+              {
+                "field": "share",
+                "title": "Share (%)",
+                "format": ".1f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.yr === '2026'"
+            },
+            {
+              "filter": "datum.hl"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "fontSize": 12,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "text": {
+              "field": "breed"
+            },
+            "color": {
+              "value": "#2B2622"
+            }
+          }
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.yr === '2026'"
+            },
+            {
+              "filter": "!datum.hl"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 10,
+            "fontSize": 12,
+            "fontWeight": "normal"
+          },
+          "encoding": {
+            "text": {
+              "field": "breed"
+            },
+            "color": {
+              "value": "#6B635B"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

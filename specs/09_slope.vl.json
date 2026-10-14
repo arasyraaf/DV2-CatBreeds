@@ -1,0 +1,276 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Share of search interest among five breeds, Australia vs Malaysia, 12 months to Oct 2026",
+  "data": {
+    "url": "data/trends_slope.csv"
+  },
+  "width": "container",
+  "height": 400,
+  "transform": [
+    {
+      "calculate": "(datum.breed === 'Ragdoll' || datum.breed === 'British Shorthair')",
+      "as": "hl"
+    },
+    {
+      "calculate": "datum.breed + ' ' + round(datum.share) + '%'",
+      "as": "lab"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "country",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Australia",
+        "Malaysia"
+      ],
+      "scale": {
+        "padding": 0.9
+      },
+      "axis": {
+        "orient": "top",
+        "labelFontSize": 15,
+        "labelFontWeight": 700,
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false,
+        "labelPadding": 10
+      }
+    },
+    "y": {
+      "field": "share",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          40
+        ]
+      },
+      "axis": null
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "interpolate": "linear"
+      },
+      "encoding": {
+        "detail": {
+          "field": "breed"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.hl",
+            "value": "#2B2622"
+          },
+          "value": "#BDB6AC"
+        },
+        "strokeWidth": {
+          "condition": {
+            "test": "datum.hl",
+            "value": 3.5
+          },
+          "value": 1.6
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 110,
+        "opacity": 1
+      },
+      "encoding": {
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Malaysia"
+            ],
+            "range": [
+              "#0072B2",
+              "#E69F00"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "breed",
+            "title": "Breed"
+          },
+          {
+            "field": "country",
+            "title": "Country"
+          },
+          {
+            "field": "share",
+            "title": "Share of the five breeds (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "rank",
+            "title": "Rank"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country === 'Australia'"
+        },
+        {
+          "filter": "datum.hl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -14,
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "lab"
+        },
+        "color": {
+          "value": "#2B2622"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country === 'Australia'"
+        },
+        {
+          "filter": "!datum.hl && datum.breed !== 'Persian' && datum.breed !== 'Bengal'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -14,
+        "fontSize": 13,
+        "fontWeight": "normal",
+        "dy": 0
+      },
+      "encoding": {
+        "text": {
+          "field": "lab"
+        },
+        "color": {
+          "value": "#6B635B"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country === 'Australia'"
+        },
+        {
+          "filter": "datum.breed === 'Bengal'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -14,
+        "fontSize": 13,
+        "fontWeight": "normal",
+        "dy": -7
+      },
+      "encoding": {
+        "text": {
+          "field": "lab"
+        },
+        "color": {
+          "value": "#6B635B"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country === 'Australia'"
+        },
+        {
+          "filter": "datum.breed === 'Persian'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -14,
+        "fontSize": 13,
+        "fontWeight": "normal",
+        "dy": 7
+      },
+      "encoding": {
+        "text": {
+          "field": "lab"
+        },
+        "color": {
+          "value": "#6B635B"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country === 'Malaysia'"
+        },
+        {
+          "filter": "datum.hl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 14,
+        "fontSize": 13,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "lab"
+        },
+        "color": {
+          "value": "#2B2622"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.country === 'Malaysia'"
+        },
+        {
+          "filter": "!datum.hl"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 14,
+        "fontSize": 13,
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "text": {
+          "field": "lab"
+        },
+        "color": {
+          "value": "#6B635B"
+        }
+      }
+    }
+  ]
+}
