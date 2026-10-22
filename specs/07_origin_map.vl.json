@@ -2,14 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Breeds per country of origin, 67 breeds",
   "width": "container",
-  "height": 360,
+  "height": 520,
   "projection": {
-    "type": "equalEarth",
-    "scale": 135,
-    "translate": [
-      350,
-      190
-    ]
+    "type": "equalEarth"
   },
   "layer": [
     {
@@ -25,7 +20,12 @@
         "fill": "#EEE9E2",
         "stroke": "#FFFFFF",
         "strokeWidth": 0.6
-      }
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.name !== 'Antarctica'"
+        }
+      ]
     },
     {
       "data": {
@@ -33,7 +33,7 @@
       },
       "mark": {
         "type": "circle",
-        "fill": "#2B2622",
+        "fill": "#A4243B",
         "fillOpacity": 0.78,
         "stroke": "#FFFFFF",
         "strokeWidth": 1.5
@@ -70,7 +70,7 @@
               15,
               30
             ],
-            "symbolFillColor": "#2B2622",
+            "symbolFillColor": "#A4243B",
             "direction": "horizontal"
           }
         },

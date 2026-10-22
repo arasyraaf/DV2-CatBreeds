@@ -45,7 +45,12 @@
           "coat"
         ]
       },
-      "bind": "legend"
+      "bind": "legend",
+      "value": [
+        {
+          "coat": "Long"
+        }
+      ]
     },
     {
       "name": "hover",

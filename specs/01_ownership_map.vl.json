@@ -23,8 +23,8 @@
       },
       "mark": {
         "type": "geoshape",
-        "fill": "#F6F3EE",
-        "stroke": "#D9D2C8",
+        "fill": "#F4F1EC",
+        "stroke": "#CFC7BB",
         "strokeWidth": 0.8
       },
       "encoding": {
@@ -87,24 +87,32 @@
           "type": "quantitative",
           "title": "% owning a cat",
           "scale": {
-            "range": [
-              "#E3DCD0",
-              "#BFB5A8",
-              "#8C8176",
-              "#4E463F",
-              "#2B2622"
-            ],
             "domain": [
-              0,
+              10,
               50
-            ]
+            ],
+            "range": [
+              "#E3F2EF",
+              "#A7D7CF",
+              "#5FB0A5",
+              "#2A7F78",
+              "#0B4F4C"
+            ],
+            "clamp": true
           },
           "legend": {
             "orient": "bottom-left",
             "direction": "horizontal",
             "gradientLength": 160,
             "format": ".0f",
-            "title": "% owning a cat"
+            "title": "% owning a cat",
+            "values": [
+              10,
+              20,
+              30,
+              40,
+              50
+            ]
           }
         },
         "tooltip": [
@@ -148,7 +156,7 @@
       "mark": {
         "type": "geoshape",
         "fill": null,
-        "strokeWidth": 3
+        "strokeWidth": 2.5
       },
       "encoding": {
         "stroke": {

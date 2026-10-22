@@ -1,44 +1,44 @@
 /* =========================================================
-   Design system — FIT3179 DV2 "Pedigree vs Moggy"
-   One colour = one meaning, everywhere on the page.
+   Design system for "Pedigree vs Moggy" (FIT3179 DV2)
+   Rule: one colour = one meaning, everywhere on the page.
    ========================================================= */
 :root {
-  /* Surface & text */
-  --bg: #FAF7F2;          /* warm off-white page */
+  /* Page surfaces and text */
+  --bg: #F7F3EC;          /* warm paper */
   --surface: #FFFFFF;     /* chart cards */
-  --ink: #2B2622;         /* body text */
+  --ink: #2B2622;         /* body text, dark bands */
   --ink-soft: #6B635B;    /* captions, sources */
-  --rule: #E4DED5;        /* hairlines */
+  --rule: #E2DACE;        /* hairlines */
+  --paper-on-dark: #F7F3EC;
 
-  /* Countries (Okabe-Ito, colour-blind safe). Every other country = --context */
+  /* Identity colours (hue = WHO or WHAT) */
   --au: #0072B2;          /* Australia */
-  --my: #E69F00;          /* Malaysia (marks) */
-  --my-ink: #A35F00;      /* Malaysia (text: orange fails contrast on cream) */
-  --context: #BDB6AC;     /* everything not being highlighted */
-
-  /* Coat group (never reused for anything else). Validated as a set with
-     scripts from the dataviz checker; green/pink need a legend or labels for CVD. */
+  --au-light: #56B4E9;    /* Australia on dark backgrounds */
+  --my: #E69F00;          /* Malaysia */
+  --my-ink: #A35F00;      /* Malaysia as text on light backgrounds */
   --coat-short: #009E73;
   --coat-long: #CC79A7;
-  --coat-mixed: #882255;     /* "Short or long" */
+  --coat-mixed: #882255;
   --coat-rexhairless: #7B5EA7;
 
-  /* Story accent: "adopted or stray" = the moggy route. Used ONLY for that. */
-  --accent: #D55E00;
-  --accent-ink: #A34700;  /* darker step for text on white (WCAG AA) */
+  /* Each measure has its own colour (listed so no two clash):
+     ownership %       = teal ramp     (map 1)
+     how cats came home = browns + slate (waffle)
+     breeds developed  = crimson       (origin map)
+     breed traits      = indigo ramp   (both heatmaps) */
 
   /* Type */
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Nunito Sans", system-ui, sans-serif;
 
-  /* Spacing scale — use ONLY these */
+  /* Spacing scale: use only these */
   --s1: 8px;
   --s2: 16px;
   --s3: 32px;
   --s4: 64px;
-  --s5: 96px;
+  --s5: 112px;
 
-  --page: 1180px;         /* fits a 1280px laptop with no horizontal scroll */
+  --page: 1360px;
   --measure: 60ch;
 }
 
@@ -49,11 +49,13 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
-/* ---------- Grid: every block snaps to the same 12 columns ---------- */
+p { max-width: var(--measure); margin: 0 0 var(--s2); }
+
+/* ---------- Page width and the 12-column grid ---------- */
 .page { max-width: var(--page); margin: 0 auto; padding: 0 var(--s3); }
 
 .section {
@@ -61,57 +63,68 @@ body {
   grid-template-columns: repeat(12, 1fr);
   column-gap: var(--s3);
   row-gap: var(--s2);
-  margin-bottom: var(--s5);
+  margin-bottom: var(--s4);
 }
 
-/* Layout patterns — use only these three to keep sight lines few */
-.full   > * { grid-column: 1 / -1; }
-.split  > .text  { grid-column: 1 / 5; align-self: start; position: sticky; top: var(--s3); }  /* text left, stays beside tall charts */
-.split  > .chart, .split > .stats { grid-column: 5 / -1; }     /* chart right, 8 cols */
-.split.flip > .text  { grid-column: 9 / -1; grid-row: 1; }
-.split.flip > .chart { grid-column: 1 / 9; grid-row: 1; }
-.pair   > .chart { grid-column: span 6; }     /* two charts side by side */
+/* Two layouts only:
+   .split = text left (4 cols, stays in view while you scroll), chart right (8 cols)
+   .wide  = text across the top, chart full width underneath (used for the maps) */
+.split > .text  { grid-column: 1 / 5; align-self: start; position: sticky; top: var(--s3); }
+.split > .chart { grid-column: 5 / -1; }
+.wide  > .text  { grid-column: 1 / 9; }
+.wide  > .chart { grid-column: 1 / -1; }
+.wide  > .text h2 { max-width: 22ch; }
 
 /* ---------- Typography ---------- */
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.15; margin: 0; }
-h1 { font-size: 52px; letter-spacing: -0.01em; margin-bottom: var(--s2); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.12; margin: 0; }
+h1 { font-size: 76px; letter-spacing: -0.02em; margin-bottom: var(--s2); }
 h2 { font-size: 34px; margin-bottom: var(--s2); }
-h3 { font-size: 20px; font-weight: 500; }
 
-p { max-width: var(--measure); margin: 0 0 var(--s2); }
-.lede { font-size: 21px; color: var(--ink-soft); max-width: var(--measure); }
-strong { font-weight: 800; }
-
-/* Inline colour keys in text — replaces legends where possible */
 .au { color: var(--au); font-weight: 700; }
 .my { color: var(--my-ink); font-weight: 700; }
 
-/* ---------- Hero stats (sit in the chart column, so they share its left edge) ---------- */
-.stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s3); align-content: start; }
-.stat .num { font-family: var(--font-display); font-size: 44px; display: block; }
-.stat .label { font-size: 14px; color: var(--ink-soft); }
+/* ---------- Hero: a dark band so the page opens with contrast ---------- */
+.hero { background: var(--ink); color: var(--paper-on-dark); padding: var(--s5) 0 var(--s4); margin-bottom: var(--s4); }
+.hero .lede { font-size: 22px; color: #D9D1C5; max-width: 46ch; }
+.hero .au { color: var(--au-light); }
+.hero .my { color: var(--my); }
+/* Definitions of the two key words, side by side under the lede */
+.defs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); max-width: 900px; margin: var(--s3) 0 0; }
+.defs dt { font-family: var(--font-display); font-size: 22px; font-weight: 600; }
+.defs dd { margin: 4px 0 0; font-size: 16px; color: #D9D1C5; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s3); margin-top: var(--s4);
+         border-top: 1px solid #4A423B; padding-top: var(--s3); }
+.stat .num { font-family: var(--font-display); font-size: 56px; line-height: 1; display: block; margin-bottom: var(--s1); }
+.stat .label { font-size: 15px; color: #BFB6A9; }
+.num.au { color: var(--au-light); }
+.num.my { color: var(--my); }
 
-/* ---------- Charts ---------- */
-.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: var(--s2); }
-.chart-title { font-weight: 700; font-size: 16px; margin-bottom: var(--s1); }
+/* ---------- Chapter headers: break the page into four acts ---------- */
+.chapter { display: flex; align-items: baseline; gap: var(--s2); border-top: 3px solid var(--ink);
+           padding-top: var(--s2); margin: var(--s5) 0 var(--s4); }
+.chapter .no { font-family: var(--font-display); font-size: 20px; color: var(--ink-soft); }
+.chapter .name { font-family: var(--font-display); font-size: 22px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* ---------- Chart cards ---------- */
+.chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: var(--s3); }
+.chart-title { font-weight: 800; font-size: 18px; margin-bottom: 4px; }
+.chart-note { font-size: 15px; color: var(--ink-soft); margin: 0 0 var(--s2); max-width: none; }
 .vis { width: 100%; }
-.chart-note { font-size: 14px; color: var(--ink-soft); margin: 0 0 var(--s1); max-width: none; }
+.source { font-size: 13px; color: var(--ink-soft); margin: var(--s2) 0 0; max-width: none; }
 
 /* Chart controls (Vega dropdowns) in the page's own type */
-.vega-bindings { font-family: var(--font-body); font-size: 14px; color: var(--ink-soft); margin-bottom: var(--s1); display: flex; flex-wrap: wrap; gap: var(--s2); }
+.vega-bindings { font-family: var(--font-body); font-size: 14px; color: var(--ink-soft); margin-top: var(--s1); display: flex; flex-wrap: wrap; gap: var(--s2); }
 .vega-bindings select { font-family: var(--font-body); font-size: 14px; color: var(--ink); padding: 4px 8px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
 .vega-embed { width: 100%; }
-.source { font-size: 13px; color: var(--ink-soft); margin-top: var(--s1); max-width: none; }
 
-/* ---------- Footer / metadata ---------- */
-footer { border-top: 1px solid var(--rule); padding: var(--s3) 0 var(--s5); font-size: 14px; color: var(--ink-soft); }
-footer p { max-width: none; }
+/* ---------- Footer ---------- */
+footer { border-top: 3px solid var(--ink); margin-top: var(--s5); padding: var(--s3) 0 var(--s5); font-size: 14px; color: var(--ink-soft); }
+footer p { max-width: 90ch; }
 
 /* ---------- Narrow screens: stack everything ---------- */
 @media (max-width: 900px) {
-  .split > .text, .split > .chart,
-  .split.flip > .text, .split.flip > .chart,
-  .pair > .chart { grid-column: 1 / -1; grid-row: auto; }
+  .split > .text, .split > .chart, .wide > .text { grid-column: 1 / -1; position: static; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  h1 { font-size: 40px; }
+  .defs { grid-template-columns: 1fr; }
+  h1 { font-size: 48px; }
 }

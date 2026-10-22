@@ -5,7 +5,7 @@
     "url": "data/heatmap_temperament.csv"
   },
   "width": "container",
-  "height": 210,
+  "height": 230,
   "encoding": {
     "x": {
       "field": "word",
@@ -27,11 +27,13 @@
       ],
       "axis": {
         "orient": "top",
-        "labelAngle": 0,
+        "labelAngle": -35,
         "domain": false,
         "ticks": false,
         "labelFontSize": 12,
-        "labelPadding": 8
+        "labelPadding": 8,
+        "labelAlign": "left",
+        "labelBaseline": "middle"
       }
     },
     "y": {
@@ -66,7 +68,13 @@
           "type": "quantitative",
           "title": "% of breeds described this way",
           "scale": {
-            "range": ["#E3DCD0", "#BFB5A8", "#8C8176", "#4E463F", "#2B2622"],
+            "range": [
+              "#ECEDF8",
+              "#C3C7EA",
+              "#8B92D3",
+              "#5058AE",
+              "#262C6E"
+            ],
             "domain": [
               0,
               100
