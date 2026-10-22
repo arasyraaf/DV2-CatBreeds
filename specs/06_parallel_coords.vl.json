@@ -123,29 +123,33 @@
       "field": "name"
     },
     "color": {
-      "field": "coat",
-      "type": "nominal",
-      "title": "Coat (click to highlight)",
-      "scale": {
-        "domain": [
-          "Short",
-          "Long",
-          "Short or long",
-          "Rex or hairless"
-        ],
-        "range": [
-          "#009E73",
-          "#CC79A7",
-          "#882255",
-          "#7B5EA7"
-        ]
+      "condition": {
+        "param": "coatPick",
+        "field": "coat",
+        "type": "nominal",
+        "title": "Coat (click to highlight)",
+        "scale": {
+          "domain": [
+            "Short",
+            "Long",
+            "Short or long",
+            "Rex or hairless"
+          ],
+          "range": [
+            "#009E73",
+            "#CC79A7",
+            "#882255",
+            "#7B5EA7"
+          ]
+        },
+        "legend": {
+          "orient": "top",
+          "direction": "horizontal",
+          "symbolType": "stroke",
+          "symbolStrokeWidth": 3
+        }
       },
-      "legend": {
-        "orient": "top",
-        "direction": "horizontal",
-        "symbolType": "stroke",
-        "symbolStrokeWidth": 3
-      }
+      "value": "#D8D2C8"
     },
     "opacity": {
       "condition": [
@@ -157,10 +161,10 @@
         {
           "param": "coatPick",
           "empty": false,
-          "value": 0.95
+          "value": 0.85
         }
       ],
-      "value": 0.2
+      "value": 0.15
     },
     "strokeWidth": {
       "condition": [
@@ -172,10 +176,10 @@
         {
           "param": "coatPick",
           "empty": false,
-          "value": 2.2
+          "value": 2
         }
       ],
-      "value": 1.4
+      "value": 1
     },
     "tooltip": [
       {

@@ -168,7 +168,12 @@
             "title": "Share of searches (%)"
           }
         ]
-      }
+      },
+      "transform": [
+        {
+          "filter": "showDest === null || datum.to === showDest"
+        }
+      ]
     },
     {
       "description": "Origin dots and labels",
@@ -291,7 +296,12 @@
           },
           "legend": null
         }
-      }
+      },
+      "transform": [
+        {
+          "filter": "showDest === null || datum.to === showDest"
+        }
+      ]
     }
   ],
   "resolve": {
@@ -301,5 +311,25 @@
     "legend": {
       "color": "independent"
     }
-  }
+  },
+  "params": [
+    {
+      "name": "showDest",
+      "value": null,
+      "bind": {
+        "input": "select",
+        "name": "Show searches in: ",
+        "options": [
+          null,
+          "Australia",
+          "Malaysia"
+        ],
+        "labels": [
+          "Both",
+          "Australia",
+          "Malaysia"
+        ]
+      }
+    }
+  ]
 }
