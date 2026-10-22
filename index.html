@@ -13,20 +13,27 @@
   <script src="js/theme.js"></script>
 </head>
 <body>
-<main class="page">
 
-  <header class="section split" style="margin-top: var(--s5);">
-    <div class="text">
-      <h1>Pedigree vs Moggy</h1>
-      <p class="lede">Show-ring breeds fill our feeds. The cats on our sofas are mostly strays, rescues and gifts. A look at the cats we admire and the cats we actually live with, in <span class="au">Australia</span> and <span class="my">Malaysia</span>.</p>
-    </div>
+<header class="hero">
+  <div class="page">
+    <h1>Pedigree vs Moggy</h1>
+    <p class="lede">Show-ring breeds fill our feeds. The cats on our sofas are mostly strays, rescues and gifts. A look at the cats we admire and the cats we actually live with, in <span class="au">Australia</span> and <span class="my">Malaysia</span>.</p>
+    <dl class="defs">
+      <div><dt>Pedigree</dt><dd>A cat of a recognised breed, such as a Ragdoll or Persian, bred to a written standard with known parents.</dd></div>
+      <div><dt>Moggy</dt><dd>A cat of mixed or unknown ancestry, the everyday "domestic shorthair". The word is Australian and British slang.</dd></div>
+    </dl>
     <div class="stats">
       <div class="stat"><span class="num">47%</span><span class="label">of Indonesian survey respondents own a cat, the highest in the region</span></div>
-      <div class="stat"><span class="num">1 in 3</span><span class="label">Australian households has a cat</span></div>
-      <div class="stat"><span class="num">61%</span><span class="label">of pets in a Putrajaya survey were strays taken in from nearby</span></div>
+      <div class="stat"><span class="num au">1 in 3</span><span class="label">Australian households has a cat</span></div>
+      <div class="stat"><span class="num my">61%</span><span class="label">of pets in a Putrajaya, Malaysia survey were strays taken in from nearby</span></div>
       <div class="stat"><span class="num">30 of 67</span><span class="label">pedigree breeds in our data were developed in the United States</span></div>
     </div>
-  </header>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="chapter"><span class="no">01</span><span class="name">Where cats live</span></div>
 
   <section class="section split">
     <div class="text">
@@ -37,9 +44,9 @@
     </div>
     <div class="chart">
       <div class="chart-title">Share owning at least one cat</div>
-      <p class="chart-note">Darker means more owners. *Australia and New Zealand count households; other countries count survey respondents.</p>
+      <p class="chart-note">Darker teal means more owners. *Australia and New Zealand count households; other countries count survey respondents.</p>
       <div id="v-ownership-map" class="vis"></div>
-      <p class="source">Sources: Animal Medicines Australia 2025; Companion Animals NZ 2024; Rakuten Insight, January 2021. Grey: no comparable data. Map: Natural Earth.</p>
+      <p class="source">Sources: Animal Medicines Australia 2025; Companion Animals NZ 2024; Rakuten Insight, January 2021. Pale grey: no comparable data. Map: Natural Earth.</p>
     </div>
   </section>
 
@@ -52,18 +59,18 @@
     </div>
     <div class="chart">
       <div class="chart-title">How 100 cats came home</div>
-      <p class="chart-note">Each square is 1%. Darker squares are cats that were found, rescued or given.</p>
+      <p class="chart-note">Each square is 1%. Browns are cats that were found, rescued or given; blue-grey is bought.</p>
       <div id="v-acquisition-waffle" class="vis"></div>
       <p class="source">Sources: Animal Medicines Australia 2025 (cats; sums to 99%, one square added to "Other"); Companion Animals NZ 2024 (cats, n=1,289); Azjeemah Bee et al. 2019 (Putrajaya, all pets, n=594, no shelter category, so indicative only).</p>
     </div>
   </section>
 
-  <section class="section split">
+  <div class="chapter"><span class="no">02</span><span class="name">Where breeds come from</span></div>
+
+  <section class="section wide">
     <div class="text">
       <h2>Most pedigree breeds were made in America</h2>
-      <p><strong>30 of the 67</strong> breeds were developed in the United States and 8 in the United Kingdom.</p>
-      <p>Southeast Asia gave the world six: Siamese, Korat, Khao Manee, Burmese, European Burmese and the Singapura.</p>
-      <p>None of the breeds in this set was developed in Malaysia.</p>
+      <p><strong>30 of the 67</strong> breeds were developed in the United States and 8 in the United Kingdom. Southeast Asia gave the world six: Siamese, Korat, Khao Manee, Burmese, European Burmese and the Singapura. None was developed in Malaysia.</p>
     </div>
     <div class="chart">
       <div class="chart-title">Breeds by country of origin</div>
@@ -72,6 +79,8 @@
       <p class="source">Source: TheCatAPI breed data, origin as recorded there (some origins are disputed). Map: Natural Earth.</p>
     </div>
   </section>
+
+  <div class="chapter"><span class="no">03</span><span class="name">What breeds are like</span></div>
 
   <section class="section split">
     <div class="text">
@@ -95,22 +104,9 @@
     </div>
     <div class="chart">
       <div class="chart-title">Share of breeds whose temperament description uses each word (%)</div>
+      <p class="chart-note">Darker indigo means more breeds in the group are described that way.</p>
       <div id="v-temperament" class="vis"></div>
-      <p class="source">Source: TheCatAPI temperament descriptions, 67 breeds grouped by coat (number of breeds in brackets). The two hybrid breeds have short coats and count as short. Descriptions are written by breed enthusiasts, not measured.</p>
-    </div>
-  </section>
-
-  <section class="section split">
-    <div class="text">
-      <h2>Every breed is "loving". The differences are in the work.</h2>
-      <p><strong>60 of 67</strong> breeds score the maximum 5 for affection, so the ratings cannot tell breeds apart on it. It is left out here.</p>
-      <p>The real differences are in <strong>grooming</strong>, <strong>shedding</strong>, <strong>noise</strong> and <strong>energy</strong>.</p>
-      <p>Use the menu to sort the breeds by any trait.</p>
-    </div>
-    <div class="chart">
-      <div class="chart-title">Trait scores for 67 breeds (1 = low, 5 = high)</div>
-      <div id="v-trait-scores" class="vis"></div>
-      <p class="source">Source: TheCatAPI trait scores, from a saved earlier version of the dataset. Scores are ratings compiled from breed guides, not measurements.</p>
+      <p class="source">Source: TheCatAPI temperament descriptions, 67 breeds grouped by coat (number of breeds in brackets). Descriptions are written by breed enthusiasts, not measured.</p>
     </div>
   </section>
 
@@ -134,7 +130,7 @@
       <h2>Long coats mean twice the grooming</h2>
       <p>Long-coated breeds average <strong>3.0 out of 5</strong> for grooming. Short-coated breeds average <strong>1.5</strong>.</p>
       <p>Rex and hairless breeds shed the least, averaging 1.3 for shedding.</p>
-      <p>Click a coat type in the legend to pick it out.</p>
+      <p>Long coats are picked out to start. Click another coat type in the legend to compare.</p>
     </div>
     <div class="chart">
       <div class="chart-title">Every breed, every trait</div>
@@ -143,6 +139,8 @@
       <p class="source">Source: TheCatAPI trait scores. Lines are nudged slightly apart so breeds with equal scores stay visible.</p>
     </div>
   </section>
+
+  <div class="chapter"><span class="no">04</span><span class="name">What we want</span></div>
 
   <section class="section split">
     <div class="text">
@@ -164,22 +162,51 @@
       <h2>In Malaysia, Ragdoll has overtaken Persian</h2>
       <p>Five years ago Persian ranked third of the five breeds in <span class="my">Malaysia</span> and Ragdoll fourth.</p>
       <p><strong>Ragdoll passed Persian in the year to October 2024</strong> and has kept climbing.</p>
-      <p><span class="au">Australia</span> has not changed: the order of the five breeds is the same in all five years.</p>
+      <p>In <span class="au">Australia</span> nothing moved: the five breeds kept the same order in all five years.</p>
     </div>
     <div class="chart">
-      <div class="chart-title">Rank of five breeds by search share</div>
-      <p class="chart-note">Rank 1 is the most searched of the five breeds. Ragdoll and Persian are highlighted.</p>
+      <div class="chart-title">Rank of five breeds by search share in Malaysia</div>
+      <p class="chart-note">Rank 1 is the most searched of the five breeds. Ragdoll is orange, Persian is black.</p>
       <div id="v-rank" class="vis"></div>
       <p class="source">Source: Google Trends, as above, averaged over each 12 months to October.</p>
+    </div>
+  </section>
+
+  <section class="section split">
+    <div class="text">
+      <h2>The favourites are the calm ones, except the Bengal</h2>
+      <p>The average breed scores <strong>3.9</strong> for energy. The Ragdoll, Maine Coon, British Shorthair and Persian all score <strong>3 or less</strong>.</p>
+      <p>The Persian needs the most grooming: <strong>5</strong>, against an average of 1.9.</p>
+      <p>The Bengal is the odd one out, scoring 5 for energy, intelligence, company and noise.</p>
+      <p>Affection is left out: 60 of 67 breeds score the maximum 5, so it cannot tell breeds apart.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Trait scores for the five most-searched breeds (1 = low, 5 = high)</div>
+      <p class="chart-note">The bottom row is the average of all 67 breeds, for comparison. Darker indigo means a higher score.</p>
+      <div id="v-trait-scores" class="vis"></div>
+      <p class="source">Source: TheCatAPI trait scores, from the breeds list archived by the Internet Archive Wayback Machine on 1 April 2026. Scores are ratings compiled from breed guides, not measurements.</p>
+    </div>
+  </section>
+
+  <section class="section wide">
+    <div class="text">
+      <h2>The cats we search for are American</h2>
+      <p>Three of the five favourite breeds were developed in the United States. They make up <strong>three quarters</strong> of these searches in <span class="au">Australia</span> and <strong>over half</strong> in <span class="my">Malaysia</span>, where the British Shorthair takes <strong>30%</strong>. The moggies on our sofas come from down the street.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Where the five most-searched breeds were developed</div>
+      <p class="chart-note">Thicker line = bigger share of breed searches in Australia (blue) or Malaysia (orange): the thickest is 74%, the thinnest 9%. Hover a line for its share. Lines link origin to destination, not travel routes.</p>
+      <div id="v-flow" class="vis"></div>
+      <p class="source">Sources: Google Trends, 12 months to 11 October 2026; breed origins from TheCatAPI. Map: Natural Earth.</p>
     </div>
   </section>
 
   <footer>
     <p><strong>Created by</strong> Asyraaf Rahman · FIT3179 Data Visualisation, Monash University · October 2026</p>
     <p><strong>Data sources</strong><br>
-      Animal Medicines Australia, <em>Pets in Australia 2025</em> · Companion Animals New Zealand, <em>NZ Pet Data Report 2024</em> · Rakuten Insight, <em>Pet ownership in Asia</em>, January 2021 · Azjeemah Bee S.H. et al., pet ownership in Putrajaya, 2019 · TheCatAPI breed data (api.thecatapi.com) · Google Trends (trends.google.com), Australia and Malaysia, to 11 October 2026 · Natural Earth country boundaries via world-atlas.</p>
+      Animal Medicines Australia, <em>Pets in Australia 2025</em> · Companion Animals New Zealand, <em>NZ Pet Data Report 2024</em> · Rakuten Insight, <em>Pet ownership in Asia</em>, January 2021 · Azjeemah Bee S.H. et al., pet ownership in Putrajaya, 2019 · TheCatAPI breeds list (api.thecatapi.com/v1/breeds), archived by the Internet Archive Wayback Machine, 1 April 2026 · Google Trends (trends.google.com), Australia and Malaysia, to 11 October 2026 · Natural Earth country boundaries via world-atlas.</p>
     <p><strong>Generative AI</strong><br>
-    Claude (Anthropic) was used to plan the story, provide coding design guidance and to check the design against feedback. The author chose the datasets, reviewed every chart and checked the figures against their sources.</p>
+      Claude (Anthropic) was used to plan the story, provide coding design guidance and to check the design against feedback. The author chose the datasets, reviewed every chart and checked the figures against their sources.</p>
   </footer>
 
 </main>
@@ -194,6 +221,7 @@
   embedChart("#v-parallel", "specs/06_parallel_coords.vl.json");
   embedChart("#v-popularity", "specs/09_slope.vl.json");
   embedChart("#v-rank", "specs/10_bump.vl.json");
+  embedChart("#v-flow", "specs/11_flow_map.vl.json");
 </script>
 </body>
 </html>

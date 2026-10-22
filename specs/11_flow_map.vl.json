@@ -1,0 +1,305 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Flow map: where the five most-searched breeds were developed, and their share of searches in Australia and Malaysia",
+  "width": "container",
+  "height": 520,
+  "projection": {
+    "type": "equalEarth"
+  },
+  "layer": [
+    {
+      "description": "Base map",
+      "data": {
+        "url": "data/world_110m.topo.json",
+        "format": {
+          "type": "topojson",
+          "feature": "countries"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#EEE9E2",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6
+      },
+      "transform": [
+        {
+          "filter": "datum.properties.name !== 'Antarctica'"
+        }
+      ]
+    },
+    {
+      "description": "One line per origin and destination. Width = share of searches, colour = destination country",
+      "data": {
+        "values": [
+          {
+            "origin": "United States",
+            "breeds": "Ragdoll, Maine Coon, Bengal",
+            "to": "Australia",
+            "share": 74.3,
+            "olon": -98,
+            "olat": 39,
+            "dlon": 134,
+            "dlat": -25
+          },
+          {
+            "origin": "United Kingdom",
+            "breeds": "British Shorthair",
+            "to": "Australia",
+            "share": 16.4,
+            "olon": -2,
+            "olat": 54,
+            "dlon": 134,
+            "dlat": -25
+          },
+          {
+            "origin": "Iran",
+            "breeds": "Persian",
+            "to": "Australia",
+            "share": 9.3,
+            "olon": 53,
+            "olat": 32,
+            "dlon": 134,
+            "dlat": -25
+          },
+          {
+            "origin": "United States",
+            "breeds": "Ragdoll, Maine Coon, Bengal",
+            "to": "Malaysia",
+            "share": 56.7,
+            "olon": -98,
+            "olat": 39,
+            "dlon": 101.7,
+            "dlat": 3.1
+          },
+          {
+            "origin": "United Kingdom",
+            "breeds": "British Shorthair",
+            "to": "Malaysia",
+            "share": 30.3,
+            "olon": -2,
+            "olat": 54,
+            "dlon": 101.7,
+            "dlat": 3.1
+          },
+          {
+            "origin": "Iran",
+            "breeds": "Persian",
+            "to": "Malaysia",
+            "share": 13.0,
+            "olon": 53,
+            "olat": 32,
+            "dlon": 101.7,
+            "dlat": 3.1
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeCap": "round",
+        "opacity": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "olon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "olat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "dlon"
+        },
+        "latitude2": {
+          "field": "dlat"
+        },
+        "color": {
+          "field": "to",
+          "type": "nominal",
+          "title": "Searches in",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Malaysia"
+            ],
+            "range": [
+              "#0072B2",
+              "#E69F00"
+            ]
+          },
+          "legend": {
+            "orient": "bottom-left",
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 5
+          }
+        },
+        "strokeWidth": {
+          "field": "share",
+          "type": "quantitative",
+          "title": "Share of searches (%)",
+          "scale": {
+            "domain": [
+              0,
+              80
+            ],
+            "range": [
+              0,
+              20
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "origin",
+            "title": "Developed in"
+          },
+          {
+            "field": "breeds",
+            "title": "Breeds"
+          },
+          {
+            "field": "to",
+            "title": "Searched in"
+          },
+          {
+            "field": "share",
+            "title": "Share of searches (%)"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Origin dots and labels",
+      "data": {
+        "values": [
+          {
+            "origin": "United States",
+            "lon": -98,
+            "lat": 39,
+            "breeds": "Ragdoll, Maine Coon, Bengal"
+          },
+          {
+            "origin": "United Kingdom",
+            "lon": -2,
+            "lat": 54,
+            "breeds": "British Shorthair"
+          },
+          {
+            "origin": "Iran",
+            "lon": 53,
+            "lat": 32,
+            "breeds": "Persian"
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "circle",
+            "size": 120,
+            "color": "#2B2622"
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "dy": -32,
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "color": "#2B2622"
+          },
+          "encoding": {
+            "text": {
+              "field": "origin"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "dy": -17,
+            "fontSize": 11,
+            "color": "#6B635B"
+          },
+          "encoding": {
+            "text": {
+              "field": "breeds"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "description": "Destination labels",
+      "data": {
+        "values": [
+          {
+            "to": "Australia",
+            "lon": 134,
+            "lat": -25
+          },
+          {
+            "to": "Malaysia",
+            "lon": 101.7,
+            "lat": 3.1
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dx": 14,
+        "align": "left",
+        "fontSize": 14,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "to"
+        },
+        "color": {
+          "field": "to",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Australia",
+              "Malaysia"
+            ],
+            "range": [
+              "#005A8C",
+              "#A35F00"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ],
+  "resolve": {
+    "scale": {
+      "color": "independent"
+    },
+    "legend": {
+      "color": "independent"
+    }
+  }
+}
