@@ -1,94 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "67 breeds x 8 trait scores, sortable by any trait, with a coat-group column",
+  "description": "Trait scores for the five most-searched breeds, with the average breed as a reference row",
   "data": {
-    "url": "data/traits_long.csv",
-    "format": {
-      "type": "csv",
-      "parse": {
-        "score": "number",
-        "trait_order": "number"
-      }
-    }
+    "url": "data/traits_favourites.csv"
   },
   "width": "container",
   "height": {
-    "step": 13
+    "step": 46
   },
-  "params": [
-    {
-      "name": "sortBy",
-      "value": "Grooming needs",
-      "bind": {
-        "input": "select",
-        "name": "Sort breeds by ",
-        "options": [
-          "Energy",
-          "Needs company",
-          "Stranger-friendly",
-          "Talkative",
-          "Intelligence",
-          "Grooming needs",
-          "Shedding",
-          "Health issues"
-        ]
-      }
-    }
-  ],
-  "transform": [
-    {
-      "calculate": "datum.trait === sortBy ? datum.score : 0",
-      "as": "sortScore"
-    },
-    {
-      "joinaggregate": [
-        {
-          "op": "max",
-          "field": "sortScore",
-          "as": "sortKey"
-        }
-      ],
-      "groupby": [
-        "name"
-      ]
-    },
-    {
-      "calculate": "datum.sortKey * 100 - indexof(['Short','Long','Short or long','Rex or hairless'], datum.coat)",
-      "as": "sortKey2"
-    }
-  ],
   "encoding": {
-    "y": {
-      "field": "name",
-      "type": "nominal",
-      "title": null,
-      "sort": {
-        "field": "sortKey2",
-        "op": "max",
-        "order": "descending"
-      },
-      "axis": {
-        "domain": false,
-        "ticks": false,
-        "labelFontSize": 11,
-        "labelPadding": 6
-      }
-    },
     "x": {
       "field": "trait",
       "type": "nominal",
       "title": null,
-      "sort": [
-        "Coat",
-        "Energy",
-        "Needs company",
-        "Stranger-friendly",
-        "Talkative",
-        "Intelligence",
-        "Grooming needs",
-        "Shedding",
-        "Health issues"
-      ],
+      "sort": {
+        "field": "trait_order"
+      },
       "axis": {
         "orient": "top",
         "labelAngle": 0,
@@ -96,51 +23,71 @@
         "ticks": false,
         "labelFontSize": 12,
         "labelFontWeight": 700,
-        "labelPadding": 18,
+        "labelPadding": 24,
         "labelExpr": "split(replace(datum.label, '-', '- '), ' ')",
-        "labelLineHeight": 14,
-        "labelBaseline": "bottom"
+        "labelBaseline": "bottom",
+        "labelLineHeight": 14
+      }
+    },
+    "y": {
+      "field": "name",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Ragdoll",
+        "Maine Coon",
+        "British Shorthair",
+        "Bengal",
+        "Persian",
+        "Average of all 67 breeds"
+      ],
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 13,
+        "labelPadding": 8,
+        "labelFontWeight": {
+          "expr": "datum.label === 'Average of all 67 breeds' ? 'normal' : 'bold'"
+        }
       }
     }
   },
   "layer": [
     {
-      "description": "Trait scores",
       "mark": {
         "type": "rect",
         "stroke": "#FFFFFF",
-        "strokeWidth": 1.5
+        "strokeWidth": 3,
+        "cornerRadius": 3
       },
       "encoding": {
         "color": {
           "field": "score",
-          "type": "ordinal",
+          "type": "quantitative",
           "title": "Score (1 = low, 5 = high)",
           "scale": {
             "domain": [
               1,
-              2,
-              3,
-              4,
               5
             ],
-            "range": ["#E3DCD0", "#BFB5A8", "#8C8176", "#4E463F", "#2B2622"]
+            "range": [
+              "#ECEDF8",
+              "#C3C7EA",
+              "#8B92D3",
+              "#5058AE",
+              "#262C6E"
+            ]
           },
           "legend": {
-            "orient": "top",
+            "orient": "bottom",
             "direction": "horizontal",
-            "symbolType": "square",
-            "symbolSize": 160
+            "gradientLength": 200
           }
         },
         "tooltip": [
           {
             "field": "name",
             "title": "Breed"
-          },
-          {
-            "field": "coat",
-            "title": "Coat"
           },
           {
             "field": "trait",
@@ -154,66 +101,25 @@
       }
     },
     {
-      "description": "Coat column: one cell per breed, coloured by coat group",
-      "transform": [
-        {
-          "filter": "datum.trait_order == 0"
-        },
-        {
-          "calculate": "'Coat'",
-          "as": "trait"
-        }
-      ],
       "mark": {
-        "type": "rect",
-        "stroke": "#FFFFFF",
-        "strokeWidth": 1.5
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": "bold"
       },
       "encoding": {
-        "color": {
-          "field": "coat",
-          "type": "nominal",
-          "title": "Coat",
-          "scale": {
-            "domain": [
-              "Short",
-              "Long",
-              "Short or long",
-              "Rex or hairless"
-            ],
-            "range": [
-              "#009E73",
-              "#CC79A7",
-              "#882255",
-              "#7B5EA7"
-            ]
-          },
-          "legend": {
-            "orient": "top",
-            "direction": "horizontal",
-            "symbolType": "square",
-            "symbolSize": 160
-          }
+        "text": {
+          "field": "score",
+          "type": "quantitative",
+          "format": ".2~f"
         },
-        "tooltip": [
-          {
-            "field": "name",
-            "title": "Breed"
+        "color": {
+          "condition": {
+            "test": "datum.score >= 3.5",
+            "value": "#FFFFFF"
           },
-          {
-            "field": "coat",
-            "title": "Coat"
-          }
-        ]
+          "value": "#2B2622"
+        }
       }
     }
-  ],
-  "resolve": {
-    "scale": {
-      "color": "independent"
-    },
-    "legend": {
-      "color": "independent"
-    }
-  }
+  ]
 }
