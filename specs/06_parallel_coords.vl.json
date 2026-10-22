@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Parallel coordinates: one line per breed across 8 trait scores, coloured by coat group",
+  "description": "Parallel coordinates: the average trait profile of each coat group (thick), over all 67 breeds (thin grey)",
   "data": {
     "url": "data/traits_long.csv",
     "format": {
@@ -12,71 +12,22 @@
     }
   },
   "width": "container",
-  "height": 340,
-  "transform": [
-    {
-      "description": "Scores are whole numbers, so nudge each breed slightly up or down to stop lines hiding behind each other",
-      "window": [
-        {
-          "op": "rank",
-          "as": "breedRank"
-        }
-      ],
-      "groupby": [
-        "trait"
-      ],
-      "sort": [
-        {
-          "field": "name"
-        }
-      ]
-    },
-    {
-      "calculate": "datum.score + ((datum.breedRank % 9) - 4) * 0.05",
-      "as": "y"
-    }
-  ],
-  "params": [
-    {
-      "name": "coatPick",
-      "select": {
-        "type": "point",
-        "fields": [
-          "coat"
-        ]
-      },
-      "bind": "legend",
-      "value": [
-        {
-          "coat": "Long"
-        }
-      ]
-    },
-    {
-      "name": "hover",
-      "select": {
-        "type": "point",
-        "fields": [
-          "name"
-        ],
-        "on": "pointerover",
-        "clear": "pointerout"
-      }
-    }
-  ],
-  "mark": {
-    "type": "line",
-    "strokeWidth": 1.6,
-    "interpolate": "linear"
-  },
+  "height": 360,
   "encoding": {
     "x": {
       "field": "trait",
       "type": "nominal",
       "title": null,
-      "sort": {
-        "field": "trait_order"
-      },
+      "sort": [
+        "Energy",
+        "Needs company",
+        "Stranger-friendly",
+        "Talkative",
+        "Intelligence",
+        "Grooming needs",
+        "Shedding",
+        "Health issues"
+      ],
       "scale": {
         "padding": 0.2
       },
@@ -89,7 +40,6 @@
         "ticks": false,
         "grid": true,
         "gridColor": "#BDB6AC",
-        "labelLimit": 0,
         "labelExpr": "split(replace(datum.label, '-', '- '), ' ')",
         "labelLineHeight": 14,
         "labelBaseline": "bottom",
@@ -97,7 +47,6 @@
       }
     },
     "y": {
-      "field": "y",
       "type": "quantitative",
       "title": "Score (1 = low, 5 = high)",
       "scale": {
@@ -118,82 +67,243 @@
         "grid": false,
         "domain": false
       }
-    },
-    "detail": {
-      "field": "name"
-    },
-    "color": {
-      "condition": {
-        "param": "coatPick",
-        "field": "coat",
-        "type": "nominal",
-        "title": "Coat (click to highlight)",
-        "scale": {
-          "domain": [
-            "Short",
-            "Long",
-            "Short or long",
-            "Rex or hairless"
+    }
+  },
+  "layer": [
+    {
+      "description": "Layer 1: one thin grey line per breed. Scores are whole numbers, so each breed is nudged slightly up or down to stop lines hiding behind each other",
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "rank",
+              "as": "breedRank"
+            }
           ],
-          "range": [
-            "#009E73",
-            "#CC79A7",
-            "#882255",
-            "#7B5EA7"
+          "groupby": [
+            "trait"
+          ],
+          "sort": [
+            {
+              "field": "name"
+            }
           ]
         },
-        "legend": {
-          "orient": "top",
-          "direction": "horizontal",
-          "symbolType": "stroke",
-          "symbolStrokeWidth": 3
-        }
-      },
-      "value": "#D8D2C8"
-    },
-    "opacity": {
-      "condition": [
         {
-          "param": "hover",
-          "empty": false,
-          "value": 1
-        },
-        {
-          "param": "coatPick",
-          "empty": false,
-          "value": 0.85
+          "calculate": "datum.score + ((datum.breedRank % 9) - 4) * 0.05",
+          "as": "y"
         }
       ],
-      "value": 0.15
-    },
-    "strokeWidth": {
-      "condition": [
+      "params": [
         {
-          "param": "hover",
-          "empty": false,
-          "value": 3.5
-        },
-        {
-          "param": "coatPick",
-          "empty": false,
-          "value": 2
+          "name": "hover",
+          "select": {
+            "type": "point",
+            "fields": [
+              "name"
+            ],
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
         }
       ],
-      "value": 1
-    },
-    "tooltip": [
-      {
-        "field": "name",
-        "title": "Breed"
+      "mark": {
+        "type": "line",
+        "strokeWidth": 1
       },
-      {
-        "field": "coat",
-        "title": "Coat"
-      },
-      {
-        "field": "origin",
-        "title": "Origin"
+      "encoding": {
+        "y": {
+          "field": "y"
+        },
+        "detail": {
+          "field": "name"
+        },
+        "color": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": "#2B2622"
+          },
+          "value": "#CFC7BB"
+        },
+        "opacity": {
+          "condition": {
+            "param": "hover",
+            "empty": false,
+            "value": 1
+          },
+          "value": 0.35
+        },
+        "tooltip": [
+          {
+            "field": "name",
+            "title": "Breed"
+          },
+          {
+            "field": "coat",
+            "title": "Coat"
+          },
+          {
+            "field": "trait",
+            "title": "Trait"
+          },
+          {
+            "field": "score",
+            "title": "Score"
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "description": "Layer 2: one thick line per coat group = its average score on each trait",
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "score",
+              "as": "avg"
+            }
+          ],
+          "groupby": [
+            "coat",
+            "trait"
+          ]
+        }
+      ],
+      "params": [
+        {
+          "name": "coatPick",
+          "select": {
+            "type": "point",
+            "fields": [
+              "coat"
+            ]
+          },
+          "bind": "legend"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "point": {
+          "size": 60,
+          "filled": true
+        }
+      },
+      "encoding": {
+        "y": {
+          "field": "avg"
+        },
+        "color": {
+          "field": "coat",
+          "type": "nominal",
+          "title": "Coat group (click to pick one)",
+          "scale": {
+            "domain": [
+              "Short",
+              "Long",
+              "Short or long",
+              "Rex or hairless"
+            ],
+            "range": [
+              "#009E73",
+              "#CC79A7",
+              "#882255",
+              "#7B5EA7"
+            ]
+          },
+          "legend": {
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "stroke",
+            "symbolStrokeWidth": 4,
+            "titleLimit": 0
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "coatPick",
+            "value": 1
+          },
+          "value": 0.12
+        },
+        "tooltip": [
+          {
+            "field": "coat",
+            "title": "Coat group"
+          },
+          {
+            "field": "trait",
+            "title": "Trait"
+          },
+          {
+            "field": "avg",
+            "title": "Average score",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Layer 3: two labels on the traits where the groups split",
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "score",
+              "as": "avg"
+            }
+          ],
+          "groupby": [
+            "coat",
+            "trait"
+          ]
+        },
+        {
+          "filter": "(datum.coat === 'Long' && datum.trait === 'Grooming needs') || (datum.coat === 'Rex or hairless' && datum.trait === 'Shedding')"
+        },
+        {
+          "calculate": "(datum.coat === 'Long' ? 'Long coats ' : 'Rex and hairless ') + format(datum.avg, '.1f')",
+          "as": "label"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "dy": -14
+      },
+      "encoding": {
+        "y": {
+          "field": "avg"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "field": "coat",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Short",
+              "Long",
+              "Short or long",
+              "Rex or hairless"
+            ],
+            "range": [
+              "#009E73",
+              "#CC79A7",
+              "#882255",
+              "#7B5EA7"
+            ]
+          },
+          "legend": null
+        }
+      }
+    }
+  ]
 }
