@@ -16,14 +16,14 @@
   --au-light: #56B4E9;    /* Australia on dark backgrounds */
   --my: #E69F00;          /* Malaysia */
   --my-ink: #A35F00;      /* Malaysia as text on light backgrounds */
-  --coat-short: #1B7A3E;
-  --coat-long: #5C2A4A;
-  --coat-mixed: #7A7A1F;
-  --coat-rexhairless: #C2507A;
+  --coat-short: #9A7B10;
+  --coat-long: #7E3F98;
+  --coat-mixed: #6E6E6E;
+  --coat-rexhairless: #3D2B56;
 
   /* Each measure has its own colour (listed so no two clash):
      ownership %       = teal ramp     (map 1)
-     how cats came home = browns + slate (waffle)
+     how cats came home = browns + plum (waffle)
      breeds developed  = crimson       (origin map)
      breed traits      = indigo ramp   (both heatmaps) */
 

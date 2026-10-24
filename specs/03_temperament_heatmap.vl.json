@@ -52,7 +52,7 @@
         "labelFontSize": 12,
         "labelPadding": 8,
         "labelColor": {
-          "expr": "indexof(datum.label, 'Short or long') === 0 ? '#7A7A1F' : indexof(datum.label, 'Short') === 0 ? '#1B7A3E' : indexof(datum.label, 'Long') === 0 ? '#5C2A4A' : '#C2507A'"
+          "expr": "indexof(datum.label, 'Short or long') === 0 ? '#6E6E6E' : indexof(datum.label, 'Short') === 0 ? '#9A7B10' : indexof(datum.label, 'Long') === 0 ? '#7E3F98' : '#3D2B56'"
         },
         "labelFontWeight": 700
       }

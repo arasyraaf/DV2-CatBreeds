@@ -2,7 +2,7 @@ const COLOURS = {
   au: "#0072B2",
   my: "#E69F00",
   context: "#BDB6AC",
-  coat: { "Short": "#1B7A3E", "Long": "#5C2A4A", "Short or long": "#7A7A1F", "Rex or hairless": "#C2507A" },
+  coat: { "Short": "#9A7B10", "Long": "#7E3F98", "Short or long": "#6E6E6E", "Rex or hairless": "#3D2B56" },
   ink: "#2B2622",
   inkSoft: "#6B635B",
   rule: "#E4DED5"
