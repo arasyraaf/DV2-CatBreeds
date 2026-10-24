@@ -15,7 +15,12 @@
       "title": {
         "text": "Australia",
         "color": "#0072B2",
-        "fontSize": 18
+        "fontSize": 18,
+        "subtitle": "24% bought",
+        "subtitleColor": "#7A2E5C",
+        "subtitleFontSize": 13,
+        "subtitleFontWeight": "bold",
+        "subtitlePadding": 2
       },
       "transform": [
         {
@@ -88,7 +93,12 @@
       "title": {
         "text": "New Zealand",
         "color": "#2B2622",
-        "fontSize": 18
+        "fontSize": 18,
+        "subtitle": "13% bought",
+        "subtitleColor": "#7A2E5C",
+        "subtitleFontSize": 13,
+        "subtitleFontWeight": "bold",
+        "subtitlePadding": 2
       },
       "transform": [
         {
@@ -156,7 +166,12 @@
       "title": {
         "text": "Malaysia",
         "color": "#A35F00",
-        "fontSize": 18
+        "fontSize": 18,
+        "subtitle": "15% bought",
+        "subtitleColor": "#7A2E5C",
+        "subtitleFontSize": 13,
+        "subtitleFontWeight": "bold",
+        "subtitlePadding": 2
       },
       "transform": [
         {

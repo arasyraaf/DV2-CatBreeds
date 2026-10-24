@@ -105,26 +105,26 @@
       "data": {
         "values": [
           {
-            "label": "United States",
+            "label": "United States 30",
             "lon": -60,
             "lat": 33,
             "alon": -80,
             "alat": 36
           },
           {
-            "label": "United Kingdom",
+            "label": "United Kingdom 8",
             "lon": -40,
             "lat": 62,
             "alon": -4,
             "alat": 56
           },
           {
-            "label": "Russia",
+            "label": "Russia 4",
             "lon": 100,
             "lat": 74
           },
           {
-            "label": "Thailand",
+            "label": "Thailand 3",
             "lon": 118,
             "lat": 19,
             "alon": 101.5,

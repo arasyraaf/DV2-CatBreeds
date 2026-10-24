@@ -364,6 +364,103 @@
           }
         }
       ]
+    },
+    {
+      "description": "Callouts: share of searches for the three American breeds, on their lines",
+      "data": {
+        "values": [
+          {
+            "to": "Australia",
+            "label": "74%",
+            "lon": -16.8,
+            "lat": 16.6
+          },
+          {
+            "to": "Malaysia",
+            "label": "57%",
+            "lon": -28.1,
+            "lat": 26.4
+          }
+        ]
+      },
+      "transform": [
+        {
+          "filter": "showDest === null || datum.to === showDest"
+        }
+      ],
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      },
+      "layer": [
+        {
+          "transform": [
+            {
+              "filter": "datum.to === 'Australia'"
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "dy": 46,
+                "stroke": "#FFFFFF",
+                "strokeWidth": 4,
+                "strokeJoin": "round"
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "dy": 46,
+                "color": "#005A8C"
+              }
+            }
+          ]
+        },
+        {
+          "transform": [
+            {
+              "filter": "datum.to === 'Malaysia'"
+            }
+          ],
+          "layer": [
+            {
+              "mark": {
+                "type": "text",
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "dy": -18,
+                "stroke": "#FFFFFF",
+                "strokeWidth": 4,
+                "strokeJoin": "round"
+              }
+            },
+            {
+              "mark": {
+                "type": "text",
+                "fontSize": 14,
+                "fontWeight": "bold",
+                "dy": -18,
+                "color": "#A35F00"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "resolve": {
