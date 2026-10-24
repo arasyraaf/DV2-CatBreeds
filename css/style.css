@@ -39,7 +39,7 @@
   --s5: 112px;
 
   --page: 1360px;
-  --measure: 60ch;
+  --measure: 40ch;        /* about 10 words per line */
 }
 
 * { box-sizing: border-box; }
@@ -108,7 +108,7 @@ h2 { font-size: 34px; margin-bottom: var(--s2); }
 /* ---------- Chart cards ---------- */
 .chart { background: var(--surface); border: 1px solid var(--rule); border-radius: 8px; padding: var(--s3); }
 .chart-title { font-weight: 800; font-size: 18px; margin-bottom: 4px; }
-.chart-note { font-size: 15px; color: var(--ink-soft); margin: 0 0 var(--s2); max-width: none; }
+.chart-note { font-size: 15px; color: var(--ink-soft); margin: 0 0 var(--s2); max-width: var(--measure); }
 .vis { width: 100%; }
 .source { font-size: 13px; color: var(--ink-soft); margin: var(--s2) 0 0; max-width: none; }
 
