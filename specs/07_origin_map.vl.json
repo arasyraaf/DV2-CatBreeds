@@ -2,9 +2,19 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Breeds per country of origin, 67 breeds",
   "width": "container",
-  "height": 520,
+  "height": 580,
   "projection": {
-    "type": "equalEarth"
+    "type": "equalEarth",
+    "center": [
+      15,
+      12
+    ],
+    "scale": {
+      "expr": "min(width / 4.4, height / 2.1)"
+    },
+    "translate": {
+      "expr": "[width / 2, height / 2]"
+    }
   },
   "layer": [
     {
@@ -19,7 +29,8 @@
         "type": "geoshape",
         "fill": "#EEE9E2",
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.6
+        "strokeWidth": 0.6,
+        "clip": true
       },
       "transform": [
         {

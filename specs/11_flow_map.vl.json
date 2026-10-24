@@ -4,7 +4,17 @@
   "width": "container",
   "height": 520,
   "projection": {
-    "type": "equalEarth"
+    "type": "equalEarth",
+    "center": [
+      15,
+      10
+    ],
+    "scale": {
+      "expr": "min(width / 4.6, height / 2)"
+    },
+    "translate": {
+      "expr": "[width / 2, height / 2]"
+    }
   },
   "layer": [
     {
@@ -20,7 +30,8 @@
         "type": "geoshape",
         "fill": "#EEE9E2",
         "stroke": "#FFFFFF",
-        "strokeWidth": 0.6
+        "strokeWidth": 0.6,
+        "clip": true
       },
       "transform": [
         {
@@ -220,7 +231,23 @@
         {
           "mark": {
             "type": "text",
-            "dy": -32,
+            "dy": -38,
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 4,
+            "strokeJoin": "round"
+          },
+          "encoding": {
+            "text": {
+              "field": "origin"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "dy": -38,
             "fontSize": 13,
             "fontWeight": "bold",
             "color": "#2B2622"
@@ -234,8 +261,23 @@
         {
           "mark": {
             "type": "text",
-            "dy": -17,
-            "fontSize": 11,
+            "dy": -22,
+            "fontSize": 12,
+            "stroke": "#FFFFFF",
+            "strokeWidth": 4,
+            "strokeJoin": "round"
+          },
+          "encoding": {
+            "text": {
+              "field": "breeds"
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "dy": -22,
+            "fontSize": 12,
             "color": "#6B635B"
           },
           "encoding": {
@@ -262,13 +304,11 @@
           }
         ]
       },
-      "mark": {
-        "type": "text",
-        "dx": 14,
-        "align": "left",
-        "fontSize": 14,
-        "fontWeight": "bold"
-      },
+      "transform": [
+        {
+          "filter": "showDest === null || datum.to === showDest"
+        }
+      ],
       "encoding": {
         "longitude": {
           "field": "lon",
@@ -280,26 +320,48 @@
         },
         "text": {
           "field": "to"
-        },
-        "color": {
-          "field": "to",
-          "type": "nominal",
-          "scale": {
-            "domain": [
-              "Australia",
-              "Malaysia"
-            ],
-            "range": [
-              "#005A8C",
-              "#A35F00"
-            ]
-          },
-          "legend": null
         }
       },
-      "transform": [
+      "layer": [
         {
-          "filter": "showDest === null || datum.to === showDest"
+          "mark": {
+            "type": "text",
+            "dx": 20,
+            "dy": 4,
+            "align": "left",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "stroke": "#FFFFFF",
+            "strokeWidth": 4,
+            "strokeJoin": "round"
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "dx": 20,
+            "dy": 4,
+            "align": "left",
+            "fontSize": 14,
+            "fontWeight": "bold"
+          },
+          "encoding": {
+            "color": {
+              "field": "to",
+              "type": "nominal",
+              "scale": {
+                "domain": [
+                  "Australia",
+                  "Malaysia"
+                ],
+                "range": [
+                  "#005A8C",
+                  "#A35F00"
+                ]
+              },
+              "legend": null
+            }
+          }
         }
       ]
     }

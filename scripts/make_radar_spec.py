@@ -106,7 +106,7 @@ marks.append({
   "encode": {"enter": {
     "x": {"value": 4}, "y": {"signal": "-scale('r', datum.data)"},
     "text": {"signal": "datum.data % 2 === 1 ? datum.data : ''"},
-    "fill": {"value": MID}, "fontSize": {"value": 10}, "baseline": {"value": "middle"},
+    "fill": {"value": MID}, "fontSize": {"value": 12}, "baseline": {"value": "middle"},
     "font": {"value": "Nunito Sans"}}}})
 
 # Draw everything inside one group centred on the chart

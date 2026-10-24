@@ -41,7 +41,11 @@
       "axis": {
         "labelAngle": 0,
         "labelFontSize": 12,
-        "labelLimit": 0
+        "labelLimit": 0,
+        "labelColor": {
+          "expr": "indexof(datum.label, 'Short or long') === 0 ? '#7A7A1F' : indexof(datum.label, 'Short') === 0 ? '#1B7A3E' : indexof(datum.label, 'Long') === 0 ? '#5C2A4A' : '#C2507A'"
+        },
+        "labelFontWeight": 700
       }
     }
   },
@@ -52,9 +56,9 @@
         "extent": "min-max",
         "size": 64,
         "median": {
-          "color": "#2B2622",
+          "color": "#FFFFFF",
           "size": 64,
-          "thickness": 2.5
+          "thickness": 3
         },
         "rule": {
           "color": "#6B635B"
@@ -88,16 +92,16 @@
               "Rex or hairless"
             ],
             "range": [
-              "#009E73",
-              "#CC79A7",
-              "#882255",
-              "#7B5EA7"
+              "#1B7A3E",
+              "#5C2A4A",
+              "#7A7A1F",
+              "#C2507A"
             ]
           },
           "legend": null
         },
         "opacity": {
-          "value": 0.55
+          "value": 1
         }
       }
     },
@@ -105,8 +109,10 @@
       "mark": {
         "type": "circle",
         "size": 38,
-        "color": "#2B2622",
-        "opacity": 0.6
+        "fill": "#FFFFFF",
+        "stroke": "#2B2622",
+        "strokeWidth": 1,
+        "opacity": 0.9
       },
       "encoding": {
         "y": {

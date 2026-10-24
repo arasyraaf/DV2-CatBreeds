@@ -26,7 +26,7 @@
       "title": "12 months to October",
       "axis": {
         "labelAngle": 0,
-        "labelFontSize": 11
+        "labelFontSize": 12
       }
     },
     "y": {
@@ -69,11 +69,11 @@
           "condition": [
             {
               "test": "datum.breed === 'Ragdoll'",
-              "value": "#E69F00"
+              "value": "#2B2622"
             },
             {
               "test": "datum.breed === 'Persian'",
-              "value": "#2B2622"
+              "value": "#8A8178"
             }
           ],
           "value": "#C9C2B7"
@@ -97,11 +97,11 @@
           "condition": [
             {
               "test": "datum.breed === 'Ragdoll'",
-              "value": "#E69F00"
+              "value": "#2B2622"
             },
             {
               "test": "datum.breed === 'Persian'",
-              "value": "#2B2622"
+              "value": "#8A8178"
             }
           ],
           "value": "#C9C2B7"

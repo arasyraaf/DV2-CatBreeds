@@ -50,7 +50,11 @@
         "domain": false,
         "ticks": false,
         "labelFontSize": 12,
-        "labelPadding": 8
+        "labelPadding": 8,
+        "labelColor": {
+          "expr": "indexof(datum.label, 'Short or long') === 0 ? '#7A7A1F' : indexof(datum.label, 'Short') === 0 ? '#1B7A3E' : indexof(datum.label, 'Long') === 0 ? '#5C2A4A' : '#C2507A'"
+        },
+        "labelFontWeight": 700
       }
     }
   },

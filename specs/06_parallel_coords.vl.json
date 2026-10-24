@@ -35,7 +35,7 @@
         "orient": "top",
         "labelAngle": 0,
         "labelFontWeight": 700,
-        "labelFontSize": 11,
+        "labelFontSize": 12,
         "domain": false,
         "ticks": false,
         "grid": true,
@@ -207,10 +207,10 @@
               "Rex or hairless"
             ],
             "range": [
-              "#009E73",
-              "#CC79A7",
-              "#882255",
-              "#7B5EA7"
+              "#1B7A3E",
+              "#5C2A4A",
+              "#7A7A1F",
+              "#C2507A"
             ]
           },
           "legend": {
@@ -246,7 +246,7 @@
       }
     },
     {
-      "description": "Layer 3: two labels on the traits where the groups split",
+      "description": "Layer 3: two labels on the traits where the groups split, placed just above (Long) or below (Rex and hairless) the point so they clear the lines",
       "transform": [
         {
           "aggregate": [
@@ -267,19 +267,73 @@
         {
           "calculate": "(datum.coat === 'Long' ? 'Long coats ' : 'Rex and hairless ') + format(datum.avg, '.1f')",
           "as": "label"
+        },
+        {
+          "calculate": "datum.avg + (datum.coat === 'Long' ? 0.38 : -0.32)",
+          "as": "label_y"
         }
       ],
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 10,
         "fontSize": 12,
         "fontWeight": "bold",
-        "dy": -14
+        "stroke": "#FFFFFF",
+        "strokeWidth": 3,
+        "strokeJoin": "round",
+        "strokeOpacity": 0.9,
+        "dx": 2
       },
       "encoding": {
         "y": {
-          "field": "avg"
+          "field": "label_y"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "#FFFFFF"
+        }
+      }
+    },
+    {
+      "description": "Layer 4: the same labels drawn over their white halo",
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "mean",
+              "field": "score",
+              "as": "avg"
+            }
+          ],
+          "groupby": [
+            "coat",
+            "trait"
+          ]
+        },
+        {
+          "filter": "(datum.coat === 'Long' && datum.trait === 'Grooming needs') || (datum.coat === 'Rex or hairless' && datum.trait === 'Shedding')"
+        },
+        {
+          "calculate": "(datum.coat === 'Long' ? 'Long coats ' : 'Rex and hairless ') + format(datum.avg, '.1f')",
+          "as": "label"
+        },
+        {
+          "calculate": "datum.avg + (datum.coat === 'Long' ? 0.38 : -0.32)",
+          "as": "label_y"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "dx": 2
+      },
+      "encoding": {
+        "y": {
+          "field": "label_y"
         },
         "text": {
           "field": "label"
@@ -295,10 +349,10 @@
               "Rex or hairless"
             ],
             "range": [
-              "#009E73",
-              "#CC79A7",
-              "#882255",
-              "#7B5EA7"
+              "#1B7A3E",
+              "#5C2A4A",
+              "#7A7A1F",
+              "#C2507A"
             ]
           },
           "legend": null

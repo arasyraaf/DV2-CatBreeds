@@ -16,10 +16,10 @@
   --au-light: #56B4E9;    /* Australia on dark backgrounds */
   --my: #E69F00;          /* Malaysia */
   --my-ink: #A35F00;      /* Malaysia as text on light backgrounds */
-  --coat-short: #009E73;
-  --coat-long: #CC79A7;
-  --coat-mixed: #882255;
-  --coat-rexhairless: #7B5EA7;
+  --coat-short: #1B7A3E;
+  --coat-long: #5C2A4A;
+  --coat-mixed: #7A7A1F;
+  --coat-rexhairless: #C2507A;
 
   /* Each measure has its own colour (listed so no two clash):
      ownership %       = teal ramp     (map 1)
