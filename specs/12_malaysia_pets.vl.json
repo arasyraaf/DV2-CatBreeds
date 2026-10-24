@@ -1,0 +1,122 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Most common pets among Malaysian pet owners, 2023. Owners could name more than one pet, so shares add to more than 100%",
+  "data": {
+    "url": "data/malaysia_pet_types.csv"
+  },
+  "width": "container",
+  "height": {
+    "step": 64
+  },
+  "encoding": {
+    "y": {
+      "field": "pet_type",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x",
+      "scale": {
+        "paddingInner": 0.35
+      },
+      "axis": {
+        "domain": false,
+        "ticks": false,
+        "labelFontSize": 14,
+        "labelFontWeight": 700,
+        "labelColor": "#2B2622",
+        "labelPadding": 12
+      }
+    },
+    "x": {
+      "field": "pct_of_pet_owners",
+      "type": "quantitative",
+      "title": "% of Malaysian pet owners who keep each pet",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      },
+      "axis": {
+        "values": [
+          0,
+          25,
+          50,
+          75,
+          100
+        ],
+        "grid": true,
+        "domain": false,
+        "ticks": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum.pet_type === 'Cats'",
+            "value": "#2B2622"
+          },
+          "value": "#BDB6AC"
+        },
+        "tooltip": [
+          {
+            "field": "pet_type",
+            "title": "Pet"
+          },
+          {
+            "field": "pct_of_pet_owners",
+            "title": "% of pet owners"
+          }
+        ]
+      }
+    },
+    {
+      "description": "Value at the end of each bar",
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "color": "#2B2622"
+      },
+      "encoding": {
+        "text": {
+          "field": "pct_label"
+        }
+      },
+      "transform": [
+        {
+          "calculate": "format(datum.pct_of_pet_owners, '.1f') + '%'",
+          "as": "pct_label"
+        }
+      ]
+    },
+    {
+      "description": "Annotation: cats compared with dogs",
+      "transform": [
+        {
+          "filter": "datum.pet_type === 'Dogs'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 64,
+        "fontSize": 13,
+        "color": "#6B635B"
+      },
+      "encoding": {
+        "text": {
+          "value": "Cats are kept about five times as often as dogs"
+        }
+      }
+    }
+  ]
+}

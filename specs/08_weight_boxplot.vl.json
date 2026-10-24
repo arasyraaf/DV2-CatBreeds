@@ -23,7 +23,23 @@
       "as": "group"
     },
     {
-      "calculate": "random()",
+      "window": [
+        {
+          "op": "row_number",
+          "as": "rn"
+        }
+      ],
+      "groupby": [
+        "coat"
+      ],
+      "sort": [
+        {
+          "field": "name"
+        }
+      ]
+    },
+    {
+      "calculate": "((datum.rn * 7) % 11) / 10",
       "as": "jit"
     }
   ],
@@ -162,6 +178,114 @@
           ]
         }
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2B2622",
+        "dy": -12
+      },
+      "encoding": {
+        "y": {
+          "field": "weight_mid",
+          "type": "quantitative"
+        },
+        "xOffset": {
+          "field": "jit",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              {
+                "expr": "width/8-24"
+              },
+              {
+                "expr": "width/8+24"
+              }
+            ]
+          }
+        },
+        "x": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Short (32)",
+            "Long (19)",
+            "Short or long (9)",
+            "Rex or hairless (7)"
+          ]
+        },
+        "text": {
+          "field": "name"
+        }
+      },
+      "description": "Label for Maine Coon, one of the two heaviest breeds",
+      "transform": [
+        {
+          "filter": "datum.name === 'Maine Coon'"
+        }
+      ]
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2B2622",
+        "dy": -12
+      },
+      "encoding": {
+        "y": {
+          "field": "weight_mid",
+          "type": "quantitative"
+        },
+        "xOffset": {
+          "field": "jit",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              {
+                "expr": "width/8-24"
+              },
+              {
+                "expr": "width/8+24"
+              }
+            ]
+          }
+        },
+        "x": {
+          "field": "group",
+          "type": "nominal",
+          "sort": [
+            "Short (32)",
+            "Long (19)",
+            "Short or long (9)",
+            "Rex or hairless (7)"
+          ]
+        },
+        "text": {
+          "field": "name"
+        }
+      },
+      "description": "Label for Chausie, one of the two heaviest breeds",
+      "transform": [
+        {
+          "filter": "datum.name === 'Chausie'"
+        }
+      ]
     }
   ]
 }

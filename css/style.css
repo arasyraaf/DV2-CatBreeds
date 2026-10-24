@@ -128,3 +128,11 @@ footer p { max-width: 90ch; }
   .defs { grid-template-columns: 1fr; }
   h1 { font-size: 48px; }
 }
+
+/* ---------- Closing takeaway: the story's answer, set apart from the charts ---------- */
+.takeaway { border-left: 4px solid var(--ink); padding: var(--s2) 0 var(--s2) var(--s3); margin: var(--s4) 0; }
+.takeaway p { font-size: 20px; }
+
+/* Links in sources and footer */
+.source a, footer a { color: inherit; text-decoration: underline; text-decoration-color: var(--rule); text-underline-offset: 2px; }
+.source a:hover, footer a:hover { text-decoration-color: currentColor; }

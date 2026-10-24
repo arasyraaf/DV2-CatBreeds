@@ -166,7 +166,7 @@
     </div>
     <div class="chart">
       <div class="chart-title">Rank of five breeds by search share in Malaysia</div>
-      <p class="chart-note">Rank 1 is the most searched of the five breeds. Ragdoll is the dark line, Persian the thick grey one.</p>
+      <p class="chart-note">Rank 1 is the most searched of the five breeds. Ragdoll is the dark line, Persian the dashed grey one.</p>
       <div id="v-rank" class="vis"></div>
       <p class="source">Source: Google Trends, as above, averaged over each 12 months to October.</p>
     </div>
@@ -201,10 +201,33 @@
     </div>
   </section>
 
+  <div class="chapter"><span class="no">05</span><span class="name">What we live with</span></div>
+
+  <section class="section split">
+    <div class="text">
+      <h2>In Malaysia, the cat is the pet</h2>
+      <p>About half of Malaysians (<strong>51%</strong>) own a pet, and <strong>78%</strong> of those owners keep a cat, about five times as many as keep a dog.</p>
+      <p>Many of them were never bought: in <span class="my">Putrajaya</span>, six in ten pets were strays taken in from nearby.</p>
+      <p><span class="au">Australia</span> shows the same pattern in insurance records: four of the five cats most often insured with Bupa are moggies, and Ragdoll is the only pedigree in the top five.</p>
+    </div>
+    <div class="chart">
+      <div class="chart-title">Pets kept by Malaysian pet owners</div>
+      <p class="chart-note">Share of pet owners who keep each pet. Owners could name more than one, so the shares add to more than 100%.</p>
+      <div id="v-pets" class="vis"></div>
+      <p class="source">Source: <a href="https://standard-insights.com/blog/pet-ownership-in-malaysia/">Standard Insights, Consumer Report Malaysia 2023</a>. Insurance figures: Bupa Pet Insurance Australia, July 2023 to June 2024, reported by <a href="https://thenightly.com.au/australia/australias-top-10-dog-and-cat-breeds-announced-c-15606064">The Nightly</a> and <a href="https://globalpetindustry.com/?p=104613">Global Pet Industry</a>.</p>
+    </div>
+  </section>
+
+  <section class="takeaway">
+    <h2>Admired online, found down the street</h2>
+    <p>The breeds we search for were mostly made in America and the United Kingdom. The cats we live with mostly were not bought: only one in four <span class="au">Australian</span> cats came from a breeder or pet shop, and six in ten pets in a <span class="my">Putrajaya</span> survey were strays taken in from nearby.</p>
+    <p>In <span class="my">Malaysia</span>, the cat is by far the most popular pet. The pedigree is the cat on the screen; the moggy is the cat on the sofa.</p>
+  </section>
+
   <footer>
     <p><strong>Created by</strong> Asyraaf Rahman · FIT3179 Data Visualisation, Monash University · October 2026</p>
     <p><strong>Data sources</strong><br>
-      Animal Medicines Australia, <em>Pets in Australia 2025</em> · Companion Animals New Zealand, <em>NZ Pet Data Report 2024</em> · Rakuten Insight, <em>Pet ownership in Asia</em>, January 2021 · Azjeemah Bee S.H. et al., pet ownership in Putrajaya, 2019 · TheCatAPI breeds list (api.thecatapi.com/v1/breeds), archived by the Internet Archive Wayback Machine, 1 April 2026 · Google Trends (trends.google.com), Australia and Malaysia, to 11 October 2026 · Natural Earth country boundaries via world-atlas.</p>
+      Animal Medicines Australia, <a href="https://animalmedicinesaustralia.org.au/wp-content/uploads/2025/09/SNR-2403006-Pet-Ownership-Study-2025-Designed_F3.pdf"><em>Pets in Australia 2025</em></a> · Companion Animals New Zealand, <a href="https://companionanimals.nz"><em>NZ Pet Data Report 2024</em></a> · Rakuten Insight, <a href="https://insight.rakuten.com/pet-ownership-in-asia/"><em>Pet ownership in Asia</em></a>, January 2021 · Azjeemah Bee S.H. et al., <a href="https://agris.fao.org/search/ar/records/647480e22d3f560f80b18c7d">pet ownership in Putrajaya</a>, 2019 · TheCatAPI <a href="https://api.thecatapi.com/v1/breeds">breeds list</a>, archived by the <a href="https://web.archive.org/">Internet Archive Wayback Machine</a>, 1 April 2026 · <a href="https://trends.google.com/">Google Trends</a>, Australia and Malaysia, to 11 October 2026 · Standard Insights, <a href="https://standard-insights.com/blog/pet-ownership-in-malaysia/"><em>Consumer Report Malaysia</em></a>, 2023 · Bupa Pet Insurance Australia top ten cats, July 2023 to June 2024, via <a href="https://thenightly.com.au/australia/australias-top-10-dog-and-cat-breeds-announced-c-15606064">The Nightly</a> and <a href="https://globalpetindustry.com/?p=104613">Global Pet Industry</a> · <a href="https://www.naturalearthdata.com/">Natural Earth</a> country boundaries via <a href="https://github.com/topojson/world-atlas">world-atlas</a>.</p>
     <p><strong>Generative AI</strong><br>
       Claude (Anthropic) was used to plan the story, provide coding design guidance and to check the design against feedback. The author chose the datasets, reviewed every chart and checked the figures against their sources.</p>
   </footer>
@@ -222,6 +245,7 @@
   embedChart("#v-popularity", "specs/09_slope.vl.json");
   embedChart("#v-rank", "specs/10_bump.vl.json");
   embedChart("#v-flow", "specs/11_flow_map.vl.json");
+  embedChart("#v-pets", "specs/12_malaysia_pets.vl.json");
 </script>
 </body>
 </html>

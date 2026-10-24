@@ -84,6 +84,19 @@
             "value": 4
           },
           "value": 1.6
+        },
+        "strokeDash": {
+          "condition": {
+            "test": "datum.breed === 'Persian'",
+            "value": [
+              6,
+              4
+            ]
+          },
+          "value": [
+            1,
+            0
+          ]
         }
       }
     },
@@ -174,6 +187,47 @@
         },
         "color": {
           "value": "#6B635B"
+        }
+      }
+    },
+    {
+      "description": "Annotation: the year Ragdoll overtook Persian",
+      "transform": [
+        {
+          "filter": "datum.yr === '2024' && datum.breed === 'Ragdoll'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -16,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 4,
+        "strokeJoin": "round"
+      },
+      "encoding": {
+        "text": {
+          "value": "2024: Ragdoll passes Persian"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.yr === '2024' && datum.breed === 'Ragdoll'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -16,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#2B2622"
+      },
+      "encoding": {
+        "text": {
+          "value": "2024: Ragdoll passes Persian"
         }
       }
     }
